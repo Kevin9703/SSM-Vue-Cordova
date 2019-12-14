@@ -12,6 +12,14 @@
         :goods="goodsList"
       />
     </div>
+    <div>
+      <van-button 
+        type="primary"
+        @click="get_allGoods"
+      >
+        主要按钮
+      </van-button>
+    </div>
   </div>
 </template>
 
@@ -20,6 +28,9 @@ import Vue from 'vue';
 import GoodsCard from '../components/GoodsCard'
 import axios from 'axios';
 import { Search } from 'vant';
+import { Button } from 'vant';
+
+Vue.use(Button);
 
 
 Vue.use(Search);
