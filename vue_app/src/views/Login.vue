@@ -48,8 +48,9 @@
 import axios from 'axios'
 import { Input,Button } from 'view-design';
 import Vue from 'vue';
-import { Toast,Dialog } from 'vant';
+import { Toast } from 'vant';
 import { Loading } from 'vant';
+import { Dialog } from 'vant';
 
 Vue.use(Loading);
 Vue.use(Toast);
@@ -65,6 +66,17 @@ export default {
         }
     },
     methods: {
+      login_test(){
+        if(this.userId=='1'&&this.userPassword=='1'){
+          this.$store.dispatch("userLogin", true);
+                  //Vuex在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
+                  //我们设置一个名为Flag，值为isLogin的字段，作用是如果Flag有值且为isLogin的时候，证明用户已经登录了。
+                  localStorage.setItem("Flag", "isLogin");
+                  //登录成功后跳转到指定页面
+                  Toast('欢迎！')  // 跳转页面到主页
+                  this.$router.push("/");
+        }
+      },
       login_check() {
           if(this.userId==''||this.userPassword==''){
             Dialog.alert({
@@ -111,7 +123,6 @@ export default {
                     });
             })
           }
-
       },
     },
 }
