@@ -14,4 +14,9 @@ public interface IGoodsService {
 
     //新增商品
     int addGoods(Goods goods);
+
+
+
+    //通过名字查询
+    List<Goods> findGoodsByName(String goodName);
 }
