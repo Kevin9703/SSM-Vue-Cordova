@@ -81,10 +81,12 @@ export default {
           // eslint-disable-next-line no-console
           console.log(response);
           this.goodsList=response.data;
+          // eslint-disable-next-line no-console
+          console.log("goodsList",this.goodsList);
           setTimeout(() => {
-            this.refresh_text="刷新成功！";
+            this.refresh_text = "刷新成功！";
             this.isLoading = false;
-            this.search=false;
+            this.search = false;
           }, 500);
         })
         .catch(error=>{
@@ -113,6 +115,8 @@ export default {
           // eslint-disable-next-line no-console
           console.log(response);
           this.searchList=response.data;
+          // eslint-disable-next-line no-console
+          console.log("searchList",this.searchList);
           this.search=true;
           if(response.data==null){
             Toast('未查询到结果');
