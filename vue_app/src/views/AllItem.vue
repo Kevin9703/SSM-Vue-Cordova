@@ -23,9 +23,16 @@
         :success-text="refresh_text"
         :success-duration="1000"
       >
-        <GoodsCard
-          :goods="goodsList"
-        />
+        <div v-if="search == false">
+          <GoodsCard
+            :goods="goodsList"
+          />
+        </div>
+        <div v-else-if="search == true">
+          <GoodsCard
+            :goods="searchList"
+          />
+        </div>
       </van-pull-refresh>
     </div> 
   </div>
@@ -53,18 +60,16 @@ export default {
     data() {
         return {
           refresh_text:'',
+          search: false,
           value: '',
           count: 0,
           isLoading: false,
-          search_list: '',
-          goodsList: [],
+          searchList: [],
+          goodsList: [{"goodId":4,"userId":"001","goodName":"篮球","number":1,"price":88,"describe":"好！","phone1":null,"phone2":null,"phone3":null},{"goodId":6,"userId":"009","goodName":"足球","number":1,"price":55,"describe":"好！","phone1":null,"phone2":null,"phone3":null},{"goodId":7,"userId":"005","goodName":"电脑","number":1,"price":2000,"describe":null,"phone1":null,"phone2":null,"phone3":null},{"goodId":8,"userId":"008","goodName":"电脑","number":1,"price":3000,"describe":null,"phone1":null,"phone2":null,"phone3":null}],
         }     
     },
     mounted(){
       this.get_allGoods();
-    },
-    updated(){
-      this.search_check();
     },
     methods: {
       get_allGoods(){
@@ -76,6 +81,7 @@ export default {
           setTimeout(() => {
             this.refresh_text="刷新成功！";
             this.isLoading = false;
+            this.search=false;
           }, 500);
         })
         .catch(error=>{
@@ -85,6 +91,7 @@ export default {
             Toast("网络开小差了，请稍后再试！")
             this.refresh_text="刷新失败！";
             this.isLoading = false;
+            this.search=false;
           }, 500);
         })
       },
@@ -92,6 +99,7 @@ export default {
         setTimeout(() => {
           this.$toast('刷新成功');
           this.isLoading = false;
+          this.search=false;
         }, 500);
       },
       onSearch(){
@@ -102,11 +110,17 @@ export default {
           // eslint-disable-next-line no-console
           console.log(response);
           this.search_list=response.data;
+          this.search=true;
+          if(response.data==null){
+            Toast('未查询到结果');
+            location.reload();
+          }
         })
         .catch(error=>{
-          Toast("网络开小差了，请稍后再试！")
+          Toast("网络开小差了，请稍后再试！");
           // eslint-disable-next-line no-console
           console.log(error);
+          this.search=true;
         })
       },
       search_check(){
