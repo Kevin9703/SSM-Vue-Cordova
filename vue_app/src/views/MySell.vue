@@ -17,7 +17,7 @@
       >
         <div>
           <!-- 所有商品列表 -->
-          <GoodsCard
+          <SellCard
             :goods="goodsList"
           />
         </div>
@@ -38,7 +38,7 @@
 
 <script>
 import Vue from 'vue';
-import GoodsCard from '../components/GoodsCard'
+import SellCard from '../components/SellCard'
 import axios from 'axios';
 import '@vant/touch-emulator';
 
@@ -58,7 +58,7 @@ Vue.use(Search);
 export default {
     name:'MySell',
     components: {
-        GoodsCard: GoodsCard,
+        SellCard: SellCard,
     },
     data() {
         return {
@@ -68,7 +68,7 @@ export default {
           count: 0,
           isLoading: false,
           searchList: [],
-          goodsList: [],
+          goodsList: [{"goodId":4,"userId":"001","goodName":"篮球","number":1,"price":88,"describe":"好！","phone1":null,"phone2":null,"phone3":null},{"goodId":6,"userId":"009","goodName":"足球","number":1,"price":55,"describe":"好！","phone1":null,"phone2":null,"phone3":null},{"goodId":7,"userId":"005","goodName":"电脑","number":1,"price":2000,"describe":null,"phone1":null,"phone2":null,"phone3":null},{"goodId":8,"userId":"008","goodName":"电脑","number":1,"price":3000,"describe":null,"phone1":null,"phone2":null,"phone3":null}],
         }     
     },
     mounted(){
@@ -79,7 +79,7 @@ export default {
             this.$router.go(-1);
         },
       get_allGoods(){
-        axios.get('http://localhost:8090/androidApp/Goods//FindMyGoods')
+        axios.get('http://localhost:8090/androidApp/Goods/FindMyGoods')
         .then(response=>{
           // eslint-disable-next-line no-console
           console.log(response);

@@ -80,6 +80,14 @@ const routes = [
     },
     component: () => import('../views/Sell.vue')
   },
+  {
+    path: '/ReviseGoods/:goodId',
+    name: 'ReviseGoods',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/ReviseGoods.vue')
+  },
 ]
 
 const router = new VueRouter({

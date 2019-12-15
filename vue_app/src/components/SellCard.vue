@@ -10,29 +10,18 @@
           :price="item.price"
           :desc="item.describe"
           :title="item.goodName"
-          :thumb="item.photo1"
+          thumb="item.photo1"
         >
-          <div slot="tags">
-            <van-tag
-              plain
-              type="danger"
-            >
-              标签
-            </van-tag>
-            <van-tag
-              plain
-              type="danger"
-            >
-              标签
-            </van-tag>
-          </div>
           <div slot="footer">
-            <van-button size="mini">
-              按钮
-            </van-button>
-            <van-button size="mini">
-              按钮
-            </van-button>
+            <router-link :to="&quot;/ReviseGoods/&quot; + item.goodId">
+              <van-button
+                size="mini"
+                round
+                type="warning"
+              >
+                修改
+              </van-button>
+            </router-link>
           </div>
         </van-card>
       </van-row>
@@ -46,15 +35,17 @@ import { Row, Col } from 'vant';
 import { Card } from 'vant';
 import { Button } from 'vant';
 
+
 Vue.use(Card);
 Vue.use(Button);
 Vue.use(Row).use(Col);
+
 
     export default {
         name: 'SellCard',
         data() {
             return {
-                
+                goodId:'',
             }
         },
         props: {
@@ -62,6 +53,8 @@ Vue.use(Row).use(Col);
             type: Array,
             default: null,
           },
+        },
+        methods: {
         },
     }
 </script>
