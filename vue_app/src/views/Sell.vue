@@ -10,88 +10,79 @@
         @click-right="onClickRight"
       />
     </div>
+
     <div>
-      <van-field
-        v-model="userId"
-        required
-        label="商品名称"
-        placeholder="请输入商品名称"
-        :error="userError"
-        @blur="userNameCheck"
-        @focus="userError=false"
-        size="large"
-        clearable
-      />
+      <van-cell-group>
+        <van-field
+          v-model="goodName"
+          required
+          label="商品名称"
+          placeholder="请输入商品名称"
+          :error="goodNameError"
+          @blur="goodNameCheck"
+          @focus="goodNameError=false"
+          clearable
+        />
 
-      <van-field
-        v-model="password"
-        label="价格"
-        placeholder="请输入价格"
-        required
-        :error="passwordError"
-        @blur="passwordCheck"
-        @focus="passwordError=false"
-        size="large"
-        clearable
-      />
-        
-      <van-field
-        v-model="phone"
-        type="tel"
-        label="电话"
-        placeholder="请输入电话"
-        required
-        :error="phoneError"
-        @blur="phoneCheck"
-        @focus="phoneError=false"
-        size="large"
-        clearable
-      />
+        <van-field
+          v-model="price"
+          label="价格"
+          placeholder="请输入价格"
+          required
+          :error="priceError"
+          @blur="priceCheck"
+          @focus="priceError=false"
+          clearable
+        />
+        <van-cell
+          title="数量"
+        >
+          <van-stepper
+            v-model="number"
+            integer
+          />
+        </van-cell>
 
-      <van-field
-        v-model="address"
-        label="地址"
-        placeholder="请输入地址"
-        required
-        :error="addressError"
-        @blur="addressCheck"
-        @focus="addressError=false"
-        size="large"
-        clearable
+        <van-field
+          v-model="describe"
+          rows="2"
+          autosize
+          label="商品描述"
+          type="textarea"
+          maxlength="100"
+          placeholder="不超过100字"
+          show-word-limit
+        />
+      </van-cell-group>
+    </div>
+    <div>
+      <van-uploader
+        :after-read="afterRead1"
+        v-model="imageList1"
+        multiple
+        :max-count="1"
       />
-
-      <van-field
-        v-model="name"
-        label="姓名"
-        placeholder="你的真实姓名"
-        size="large"
-        clearable
+      <van-uploader
+        :after-read="afterRead2"
+        v-model="imageList2"
+        multiple
+        :max-count="1"
       />
-        
-      <van-field
-        v-model="sex"
-        label="性别"
-        placeholder="你的性别"
-        size="large"
-        clearable
-      />
-
-      <van-field
-        v-model="qq"
-        label="QQ"
-        type="number"
-        placeholder="请输入QQ"
-        size="large"
-        clearable
+      <van-uploader
+        :after-read="afterRead3"
+        v-model="imageList3"
+        multiple
+        :max-count="1"
       />
     </div>
+
     <div style="text-align:center">
       <Button
         type="primary"
-        size="large"
         @click="submitInfo"
         style="width: 90%;margin-top:30px;"
         :disabled="buttonDisabled"
+        size="large"
       >
         提交
       </Button>
@@ -102,12 +93,20 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios'
-import { Field,NavBar,Toast,Dialog,Icon } from 'vant';
+import { NavBar,Toast,Dialog,Icon } from 'vant';
+import { Field } from 'vant';
 import { Button } from 'view-design';
 import { Loading } from 'vant';
+import { Stepper } from 'vant';
+import { Cell, CellGroup } from 'vant';
+import { Uploader } from 'vant';
 
+Vue.use(Uploader);
+Vue.use(Cell).use(CellGroup);
+Vue.use(Stepper);
 Vue.use(Loading);
-Vue.use(Field,Toast);
+Vue.use(Field);
+Vue.use(Toast);
 Vue.use(Dialog);
 Vue.use(NavBar);
 Vue.use(Icon);
@@ -118,17 +117,19 @@ export default {
     data() {
         return {
             buttonDisabled: true,
-            userError: false,
-            passwordError: false,
-            phoneError: false,
-            addressError: false,
-            password:'',
-            userId:'',
-            name:'',
-            address:'',
-            phone:'',
-            qq:'',
-            sex:'',
+            goodNameError: false,
+            priceError: false,
+            goodName:'',
+            number:'1',
+            price:'',
+            describe:'',
+            imageList1: [],
+            imageList2: [],
+            imageList3: [],
+            photo1:'',
+            photo2:'',
+            photo3:'',
+            temp:'',
         }
     },
     updated() {
@@ -142,35 +143,35 @@ export default {
           Toast('发布');
         },
         check(){  // 有空的话提交按钮禁用
-            if(this.username==''||this.password==''||this.phone==''||this.address==''){
+            if(this.goodName==''||this.price==''||this.imageList==''){
                 this.buttonDisabled=true;
             }else{
                 this.buttonDisabled=false;
             }
         },
         submitInfo(){
-            //用post向后台提交注册信息  ======未完成：注册输入框判断======
-            axios.post('http://localhost:8090/androidApp/User/Register',{
-              userId: this.userId,
-              password: this.password,
-              userName: this.name,
-              address: this.address,
-              phone: this.phone,
-              qq: this.qq,
-              sex: this.sex,
+            //用post向后台提交商品信息
+            axios.post('http://localhost:8090/androidApp/Goods/AddGoods',{
+              goodName: this.goodName,
+              price: this.price,
+              number: this.number,
+              describe: this.describe,
+              photo1: this.photo1,
+              photo2: this.photo2,
+              photo3: this.photo3,
             })
             .then(response=>{
               // eslint-disable-next-line no-console
               console.log('response :', response);
               if(response.data == 'success'){
-                Toast.success('注册成功！');
+                Toast.success('商品发布成功！');
                 // eslint-disable-next-line no-console
                 window.history.go(-1);
               }
               else if(response.data == 'fail'){
                 Dialog.alert({
                 title: '提示',
-                message: '用户名已存在，请重新输入！'
+                message: '商品已存在，请重新输入！'
                 }).then(() => {
                   // on close
                 });
@@ -195,33 +196,37 @@ export default {
                   });
             })
         },
-        userNameCheck(){   
-            if(this.username==''){
-                this.userError=true
+        goodNameCheck(){   
+            if(this.goodName==''){
+                this.goodNameError=true
             }else{
-                this.userError=false
+                this.goodNameError=false
             }
         },
-        passwordCheck(){   
-            if(this.password==''){
-                this.passwordError=true
+        priceCheck(){   
+            if(this.price==''){
+                this.priceError=true
             }else{
-                this.passwordError=false
+                this.priceError=false
             }
         },
-        phoneCheck(){   
-            if(this.phone==''){
-                this.phoneError=true
-            }else{
-                this.phoneError=false
-            }
+        afterRead1(file) {
+          // 此时可以自行将文件上传至服务器
+          // eslint-disable-next-line no-console
+          console.log(file.content);
+          this.photo1=file.content;
         },
-        addressCheck(){   
-            if(this.address==''){
-                this.addressError=true
-            }else{
-                this.addressError=false
-            }
+        afterRead2(file) {
+          // 此时可以自行将文件上传至服务器
+          // eslint-disable-next-line no-console
+          console.log(file.content);
+          this.photo2=file.content;
+        },
+        afterRead3(file) {
+          // 此时可以自行将文件上传至服务器
+          // eslint-disable-next-line no-console
+          console.log(file.content);
+          this.photo3=file.content;
         },
     },
 }

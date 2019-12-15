@@ -2,7 +2,7 @@
   <div>
     <div class="search">
       <van-nav-bar
-        title="商品出售"
+        title="我卖出的商品"
         left-text="返回"
         left-arrow
         @click-left="onClickLeft"
