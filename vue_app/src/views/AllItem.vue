@@ -114,20 +114,24 @@ export default {
         .then(response=>{
           // eslint-disable-next-line no-console
           console.log(response);
-          this.searchList=response.data;
+          this.searchList=response.data;    // 查询成功
+          this.value='';
           // eslint-disable-next-line no-console
           console.log("searchList",this.searchList);
           this.search=true;
           if(response.data==null){
+            this.value='';
             Toast('未查询到结果');
-            location.reload();
+            setTimeout(()=>{
+              location.reload();
+            },1000); 
           }
         })
         .catch(error=>{
           Toast("网络开小差了，请稍后再试！");
           // eslint-disable-next-line no-console
           console.log(error);
-          this.search=true;
+          this.search=false;
         })
       },
       search_check(){
