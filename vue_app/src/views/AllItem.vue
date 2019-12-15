@@ -85,6 +85,7 @@ export default {
           console.log("goodsList",this.goodsList);
           setTimeout(() => {
             this.refresh_text = "刷新成功！";
+            this.value='';
             this.isLoading = false;
             this.search = false;
           }, 500);
@@ -115,7 +116,6 @@ export default {
           // eslint-disable-next-line no-console
           console.log(response);
           this.searchList=response.data;    // 查询成功
-          this.value='';
           // eslint-disable-next-line no-console
           console.log("searchList",this.searchList);
           this.search=true;
