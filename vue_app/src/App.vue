@@ -1,6 +1,7 @@
 <template>
   <div
     id="app"
+    class="div"
   >
     <!-- <div
       id="nav"
@@ -15,10 +16,7 @@
     </div> -->
     <router-view />
     <!-- 登录和注册页面不显示底部导航栏 -->
-    <div
-      v-if="$route.path!=='/login' && $route.path!=='/register'"
-      class="nav"
-    >
+    <div v-if="$route.path!=='/login' && $route.path!=='/register'">
       <van-tabbar v-model="active">
         <van-tabbar-item
           name="home"
@@ -54,7 +52,6 @@
 </template>
 
 <script>
-import '@vant/touch-emulator';
 export default {
   data(){
     return{
@@ -90,9 +87,6 @@ export default {
     width: 100%;
     height: 100%;
     background-color: #f5f5f5;
-    /* position: fixed; */
+    position: fixed;
   }
-.nav{
-  height :50px;
-}
 </style>

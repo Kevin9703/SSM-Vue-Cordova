@@ -56,14 +56,6 @@ const routes = [
     },
     component: () => import('../views/UserDetail.vue')
   },
-  {
-    path: '/test',
-    name: 'test',
-    meta: {
-      isLogin: true
-    },
-    component: () => import('../views/test.vue')
-  },
 ]
 
 const router = new VueRouter({
