@@ -10,7 +10,7 @@
           :price="item.price"
           :desc="item.describe"
           :title="item.goodName"
-          thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+          thumb="item.photo1"
         />
       </van-row>
     </div>
