@@ -86,10 +86,8 @@ export default {
 </script>
 
 <style>
-.div{
-    width: 100%;
-    height: 100%;
-    background-color: #f5f5f5;
+html,body,#app{
+    background-color: #ffffff;
     /* position: fixed; */
   }
 .nav{

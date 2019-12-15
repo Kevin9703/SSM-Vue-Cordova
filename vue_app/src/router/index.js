@@ -64,6 +64,22 @@ const routes = [
     },
     component: () => import('../views/test.vue')
   },
+  {
+    path: '/MySell',
+    name: '/MySell',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/MySell.vue')
+  },
+  {
+    path: '/Sell',
+    name: '/Sell',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/Sell.vue')
+  },
 ]
 
 const router = new VueRouter({

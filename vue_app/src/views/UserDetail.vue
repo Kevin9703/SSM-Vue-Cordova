@@ -39,7 +39,7 @@
           <van-cell
             title="我出售的东西"
             is-link
-            to="/"
+            to="/MySell"
             icon="balance-o"
           />
         </van-cell-group>

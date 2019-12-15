@@ -1,43 +1,37 @@
 <template>
   <div>
-    <div class="top">
-      <van-search
-        v-model="value"
-        placeholder="请输入搜索关键词"
-        show-action
-        shape="round"
-        @search="onSearch"
-        size="large"
-      >
-        <div
-          slot="action"
-          @click="onSearch"
-        >
-          搜索
-        </div>
-      </van-search>
+    <div class="search">
+      <van-nav-bar
+        title="商品出售"
+        left-text="返回"
+        left-arrow
+        @click-left="onClickLeft"
+      />
     </div>
-    <div
-      class="refresh"
-      id="show"
-    >
+    <div>
       <van-pull-refresh
         v-model="isLoading"
         @refresh="get_allGoods"
         :success-text="refresh_text"
         :success-duration="1000"
       >
-        <div v-if="search == false">
+        <div>
+          <!-- 所有商品列表 -->
           <GoodsCard
             :goods="goodsList"
           />
         </div>
-        <div v-else-if="search == true">
-          <GoodsCard
-            :goods="searchList"
-          />
-        </div>
       </van-pull-refresh>
+      <div class="button">
+        <!-- 出售按钮 -->
+        <van-button
+          type="info"
+          @click="sell"
+          to="/Sell"
+          :round="true"
+          icon="plus"
+        />
+      </div>
     </div> 
   </div>
 </template>
@@ -51,13 +45,18 @@ import '@vant/touch-emulator';
 import { Search, Toast } from 'vant';
 import { Button } from 'vant';
 import { PullRefresh } from 'vant';
+import { Row, Col } from 'vant';
+import { NavBar } from 'vant';
 
+Vue.use(NavBar);
+
+Vue.use(Row).use(Col);
 Vue.use(PullRefresh);
 Vue.use(Button);
 Vue.use(Search);
 
 export default {
-    name:'AllItem',
+    name:'MySell',
     components: {
         GoodsCard: GoodsCard,
     },
@@ -76,8 +75,11 @@ export default {
       this.get_allGoods();
     },
     methods: {
+        onClickLeft() {
+            this.$router.go(-1);
+        },
       get_allGoods(){
-        axios.get('http://localhost:8090/androidApp/Goods/FindAllGoods')
+        axios.get('http://localhost:8090/androidApp/Goods//FindMyGoods')
         .then(response=>{
           // eslint-disable-next-line no-console
           console.log(response);
@@ -109,39 +111,8 @@ export default {
           this.search=false;
         }, 500);
       },
-      onSearch(){
-        axios.post('http://localhost:8090/androidApp/Goods/FindGoodsByName',{
-          goodName:this.value,
-        })
-        .then(response=>{
-          // eslint-disable-next-line no-console
-          console.log(response);
-          this.searchList=response.data;    // 查询成功
-          // eslint-disable-next-line no-console
-          console.log("searchList",this.searchList);
-          this.search=true;
-          if(response.data==null){
-            this.value='';
-            Toast('未查询到结果');
-            setTimeout(()=>{
-              location.reload();
-            },1000); 
-          }
-        })
-        .catch(error=>{
-          Toast("网络开小差了，请稍后再试！");
-          // eslint-disable-next-line no-console
-          console.log(error);
-          this.search=false;
-          this.value='';
-        })
-      },
-      search_check(){
-        if(this.value == ''){
-          this.get_allGoods();
-          // eslint-disable-next-line no-console
-          console.log("搜索栏清空")
-        }
+      sell(){
+        
       },
     },
 }
@@ -149,12 +120,16 @@ export default {
 
 
 <style scoped>
-  .top{
+  .search{
     position:sticky;
     top:0px;
     z-index: 1;
   }
-  .refresh{
-    z-index:2;
+  .button{
+      text-align: center;
+      position:fixed;
+      z-index: 1;
+      bottom:60px;
+      right: 10px;
   }
 </style>

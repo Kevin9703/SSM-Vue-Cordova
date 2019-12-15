@@ -1,19 +1,21 @@
 <template>
   <div class="register">
-    <div>
+    <div class="top">
       <van-nav-bar
-        title="用户注册"
-        left-arrow
+        title="商品出售"
         left-text="返回"
+        left-arrow
         @click-left="onClickLeft"
+        right-text="发布"
+        @click-right="onClickRight"
       />
     </div>
-    <div style="margin-top:30px;">
+    <div>
       <van-field
         v-model="userId"
         required
-        label="用户名"
-        placeholder="请输入用户名"
+        label="商品名称"
+        placeholder="请输入商品名称"
         :error="userError"
         @blur="userNameCheck"
         @focus="userError=false"
@@ -23,9 +25,8 @@
 
       <van-field
         v-model="password"
-        type="password"
-        label="密码"
-        placeholder="请输入密码"
+        label="价格"
+        placeholder="请输入价格"
         required
         :error="passwordError"
         @blur="passwordCheck"
@@ -137,6 +138,9 @@ export default {
         onClickLeft() {
             this.$router.go(-1);
         },
+        onClickRight(){
+          Toast('发布');
+        },
         check(){  // 有空的话提交按钮禁用
             if(this.username==''||this.password==''||this.phone==''||this.address==''){
                 this.buttonDisabled=true;
@@ -224,5 +228,9 @@ export default {
 </script>
 
 <style coped>
-    
+  .top{
+    position:sticky;
+    top:0px;
+    z-index: 1;
+  }
 </style>
