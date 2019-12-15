@@ -10,7 +10,7 @@
           :price="item.price"
           :desc="item.describe"
           :title="item.goodName"
-          thumb="item.photo1"
+          :thumb="item.photo1"
         />
       </van-row>
     </div>

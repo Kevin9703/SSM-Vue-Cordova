@@ -10,7 +10,7 @@
           :price="item.price"
           :desc="item.describe"
           :title="item.goodName"
-          thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+          :thumb="item.photo1"
         >
           <div slot="tags">
             <van-tag
@@ -44,9 +44,10 @@
 import Vue from 'vue';
 import { Row, Col } from 'vant';
 import { Card } from 'vant';
+import { Button } from 'vant';
 
 Vue.use(Card);
-
+Vue.use(Button);
 Vue.use(Row).use(Col);
 
     export default {
