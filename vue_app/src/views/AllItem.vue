@@ -16,7 +16,10 @@
         </div>
       </van-search>
     </div>
-    <div class="refresh">
+    <div
+      class="refresh"
+      id="show"
+    >
       <van-pull-refresh
         v-model="isLoading"
         @refresh="get_allGoods"
@@ -109,7 +112,7 @@ export default {
         .then(response=>{
           // eslint-disable-next-line no-console
           console.log(response);
-          this.search_list=response.data;
+          this.searchList=response.data;
           this.search=true;
           if(response.data==null){
             Toast('未查询到结果');
