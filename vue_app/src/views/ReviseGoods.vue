@@ -7,7 +7,7 @@
         left-arrow
         @click-left="onClickLeft"
         right-text="提交"
-        @click-right="onClickRight"
+        @click-right="submitInfo"
       />
     </div>
 
