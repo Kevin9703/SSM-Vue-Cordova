@@ -105,12 +105,10 @@ export default {
             photo1:'',
             photo2:'',
             photo3:'',
-            good_id:'',
         }
     },
     created () {
         this.get_Goods()
-        this.get_id()
     },
     methods: {
         onClickLeft() {
@@ -118,7 +116,7 @@ export default {
         },
         onClickRight(){
           Toast('发布');
-        },
+        }, 
         deleteGood(){
             Dialog.confirm({
                 title: '提示',
@@ -162,7 +160,7 @@ export default {
             })
         },
         get_Goods(){
-            axios.get('http://localhost:8090/androidApp/Goods/FindGoodsById',{
+            axios.post('http://localhost:8090/androidApp/Goods/FindGoodsById',{
                 goodId:this.$route.params.goodId
             })
             .then(response=>{
@@ -178,10 +176,6 @@ export default {
             console.log(error);
             })
         },
-
-        get_id () {
-            this.good_id = this.$route.params.goodId
-        }
     },
 }
 </script>
