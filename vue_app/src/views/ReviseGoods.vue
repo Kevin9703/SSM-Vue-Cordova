@@ -11,52 +11,47 @@
       />
     </div>
 
-    <div
-      v-for="item in goodList"
-      :key="item.index"
-    >
-      <div v-if="item.goodId == good_id">
-        <van-cell-group>
-          <van-field
-            v-model="goodName"
-            required
-            label="商品名称"
-            placeholder="请输入商品名称"
-            :error="goodNameError"
-            @focus="goodNameError=false"
-            clearable
-          />
+    <div>
+      <van-cell-group>
+        <van-field
+          v-model="goodName"
+          required
+          label="商品名称"
+          placeholder="请输入商品名称"
+          :error="goodNameError"
+          @focus="goodNameError=false"
+          clearable
+        />
 
-          <van-field
-            v-model="price"
-            label="价格"
-            placeholder="请输入价格"
-            required
-            :error="priceError"
-            @focus="priceError=false"
-            clearable
+        <van-field
+          v-model="price"
+          label="价格"
+          placeholder="请输入价格"
+          required
+          :error="priceError"
+          @focus="priceError=false"
+          clearable
+        />
+        <van-cell
+          title="数量"
+        >
+          <van-stepper
+            v-model="number"
+            integer
           />
-          <van-cell
-            title="数量"
-          >
-            <van-stepper
-              v-model="number"
-              integer
-            />
-          </van-cell>
+        </van-cell>
 
-          <van-field
-            v-model="describe"
-            rows="2"
-            autosize
-            label="商品描述"
-            type="textarea"
-            maxlength="100"
-            placeholder="不超过100字"
-            show-word-limit
-          />
-        </van-cell-group>
-      </div>
+        <van-field
+          v-model="describe"
+          rows="2"
+          autosize
+          label="商品描述"
+          type="textarea"
+          maxlength="100"
+          placeholder="不超过100字"
+          show-word-limit
+        />
+      </van-cell-group>
     </div>
 
     <div style="text-align:center">
