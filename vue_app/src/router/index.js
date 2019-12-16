@@ -88,6 +88,14 @@ const routes = [
     },
     component: () => import('../views/ReviseGoods.vue')
   },
+  {
+    path: '/MyDetail',
+    name: 'MyDetail',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/MyDetail.vue')
+  },
 ]
 
 const router = new VueRouter({

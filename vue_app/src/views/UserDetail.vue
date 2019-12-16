@@ -91,6 +91,9 @@ export default {
             userName:'',
         }
     },
+    mounted(){
+      this.get_info();
+    },
     methods: {
         click(){
           Toast.setDefaultOptions({ duration: 1000 });
