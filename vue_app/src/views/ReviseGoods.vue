@@ -2,7 +2,7 @@
   <div class="register">
     <div class="top">
       <van-nav-bar
-        title="出售商品编辑"
+        title="商品编辑"
         left-text="返回"
         left-arrow
         @click-left="onClickLeft"
@@ -54,22 +54,22 @@
 
     <div style="text-align:center">
       <van-button
-        type="danger"
-        @click="deleteGood"
-        style="width: 90%;margin-top:30px;"
-        size="large"
-      >
-        删除此商品
-      </van-button>
-    </div>
-    <div style="text-align:center">
-      <van-button
         type="primary"
         @click="submitInfo"
         style="width: 90%;margin-top:30px;"
         size="large"
       >
         提交
+      </van-button>
+    </div>
+    <div style="text-align:center">
+      <van-button
+        type="danger"
+        @click="deleteGood"
+        style="width: 90%;margin-top:30px;"
+        size="large"
+      >
+        删除此商品
       </van-button>
     </div>
   </div>

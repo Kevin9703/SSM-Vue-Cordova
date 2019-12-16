@@ -3,22 +3,53 @@
     class="home"
     style="text-align: center;"
   >
-    <h1>主页</h1>
-    <div style="margin-top:20px;">
-      <img
-        alt="Vue logo"
-        src="../assets/logo.png"
+    <div style="text-align:center;margin-top:80px">
+      <van-swipe
+        :autoplay="3000"
+        indicator-color="#6495ED"
       >
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    </div> 
+        <van-swipe-item>
+          <van-image
+            width="400"
+            height="200"
+            :src="images"
+          />
+        </van-swipe-item>
+        <van-swipe-item>
+          <van-image
+            width="400"
+            height="200"
+            src="https://img.yzcdn.cn/vant/cat.jpeg"
+          />
+        </van-swipe-item>
+        <van-swipe-item>
+          <van-image
+            width="400"
+            height="200"
+            src="https://img.yzcdn.cn/vant/cat.jpeg"
+          />
+        </van-swipe-item>
+        <van-swipe-item>
+          <van-image
+            width="400"
+            height="200"
+            src="https://img.yzcdn.cn/vant/cat.jpeg"
+          />
+        </van-swipe-item>
+      </van-swipe>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import Vue from 'vue';
 import { Tabbar, TabbarItem } from 'vant';
+import { Swipe, SwipeItem } from 'vant';
+import { Image } from 'vant';
+
+Vue.use(Image);
+
+Vue.use(Swipe).use(SwipeItem);
 
 Vue.use(Tabbar).use(TabbarItem);
 
@@ -29,6 +60,7 @@ export default {
   },
   data(){
     return{
+        images: require('../assets/123.jpg'),
     }
   }
 }

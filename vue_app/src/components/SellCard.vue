@@ -46,6 +46,7 @@ Vue.use(Row).use(Col);
         data() {
             return {
                 goodId:'',
+                photo:require('../assets/123.jpg'),
             }
         },
         props: {

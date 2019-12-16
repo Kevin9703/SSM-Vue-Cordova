@@ -8,81 +8,83 @@
         @click-left="onClickLeft"
       />
     </div>
-    <div style="margin-top:30px;">
-      <van-field
-        v-model="userId"
-        required
-        label="用户名"
-        placeholder="请输入用户名"
-        :error="userError"
-        @blur="userNameCheck"
-        @focus="userError=false"
-        size="large"
-        clearable
-      />
+    <div>
+      <van-cell-group>
+        <van-field
+          v-model="userId"
+          required
+          label="用户名"
+          placeholder="请输入用户名"
+          :error="userError"
+          @blur="userNameCheck"
+          @focus="userError=false"
+          size="large"
+          clearable
+        />
 
-      <van-field
-        v-model="password"
-        type="password"
-        label="密码"
-        placeholder="请输入密码"
-        required
-        :error="passwordError"
-        @blur="passwordCheck"
-        @focus="passwordError=false"
-        size="large"
-        clearable
-      />
+        <van-field
+          v-model="password"
+          type="password"
+          label="密码"
+          placeholder="请输入密码"
+          required
+          :error="passwordError"
+          @blur="passwordCheck"
+          @focus="passwordError=false"
+          size="large"
+          clearable
+        />
         
-      <van-field
-        v-model="phone"
-        type="tel"
-        label="电话"
-        placeholder="请输入电话"
-        required
-        :error="phoneError"
-        @blur="phoneCheck"
-        @focus="phoneError=false"
-        size="large"
-        clearable
-      />
+        <van-field
+          v-model="phone"
+          type="tel"
+          label="电话"
+          placeholder="请输入电话"
+          required
+          :error="phoneError"
+          @blur="phoneCheck"
+          @focus="phoneError=false"
+          size="large"
+          clearable
+        />
 
-      <van-field
-        v-model="address"
-        label="地址"
-        placeholder="请输入地址"
-        required
-        :error="addressError"
-        @blur="addressCheck"
-        @focus="addressError=false"
-        size="large"
-        clearable
-      />
+        <van-field
+          v-model="address"
+          label="地址"
+          placeholder="请输入地址"
+          required
+          :error="addressError"
+          @blur="addressCheck"
+          @focus="addressError=false"
+          size="large"
+          clearable
+        />
 
-      <van-field
-        v-model="name"
-        label="姓名"
-        placeholder="你的真实姓名"
-        size="large"
-        clearable
-      />
+        <van-field
+          v-model="name"
+          label="姓名"
+          placeholder="你的真实姓名"
+          size="large"
+          clearable
+        />
         
-      <van-field
-        v-model="sex"
-        label="性别"
-        placeholder="你的性别"
-        size="large"
-        clearable
-      />
+        <van-field
+          v-model="sex"
+          label="性别"
+          placeholder="你的性别"
+          size="large"
+          clearable
+        />
 
-      <van-field
-        v-model="qq"
-        label="QQ"
-        type="number"
-        placeholder="请输入QQ"
-        size="large"
-        clearable
-      />
+        <van-field
+          v-model="qq"
+          label="QQ"
+          type="number"
+          placeholder="请输入QQ"
+          size="large"
+          clearable
+        />
+      </van-cell-group>
     </div>
     <div style="text-align:center">
       <Button
@@ -104,6 +106,7 @@ import axios from 'axios'
 import { Field,NavBar,Toast,Dialog,Icon } from 'vant';
 import { Button } from 'view-design';
 import { Loading } from 'vant';
+import { Cell, CellGroup } from 'vant';
 
 Vue.use(Loading);
 Vue.use(Field,Toast);
@@ -111,6 +114,7 @@ Vue.use(Dialog);
 Vue.use(NavBar);
 Vue.use(Icon);
 Vue.component('Button', Button);
+Vue.use(Cell).use(CellGroup);
 
 export default {
     name: 'Register',

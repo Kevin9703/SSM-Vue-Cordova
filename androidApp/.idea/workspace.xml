@@ -6,8 +6,52 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f76edd-1e3a-4ec7-9c9f-f5000a1e8dbd" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="55f76edd-1e3a-4ec7-9c9f-f5000a1e8dbd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/css/app.c2dd0c84.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/about.b9f15043.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/about.b9f15043.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/app.feefbff2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/app.feefbff2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0c7e52.f6cad0a5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0c7e52.f6cad0a5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0c94ec.f2c73535.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0c94ec.f2c73535.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0e9050.dd17685e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0e9050.dd17685e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d22d74b.841ab135.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d22d74b.841ab135.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-53288079.55823e30.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-53288079.55823e30.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-vendors.2f29a83f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-vendors.2f29a83f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/css/app.c2dd0c84.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cordova/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/about.b9f15043.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/about.b9f15043.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/app.feefbff2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/app.feefbff2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0c7e52.f6cad0a5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0c7e52.f6cad0a5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0c94ec.f2c73535.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0c94ec.f2c73535.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0e9050.dd17685e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0e9050.dd17685e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d22d74b.841ab135.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d22d74b.841ab135.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-53288079.55823e30.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-53288079.55823e30.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-vendors.2f29a83f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-vendors.2f29a83f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/AllItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/AllItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/MyDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/MyDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/MySell.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/MySell.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/ReviseGoods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/ReviseGoods.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/Sell.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/Sell.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/UserDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/UserDetail.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +79,11 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1UsydRzDlOu2rT0XF74dIIHDOJU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -60,18 +109,6 @@
       <recent name="D:\IntelliJ IDEA 2019.2\androidApp\src\main\webapp\WEB-INF" />
       <recent name="D:\IntelliJ IDEA 2019.2\androidApp\src\main\resources" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.221">
     <configuration name="testSpring.testMybatisSaveAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -169,6 +206,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -185,6 +234,7 @@
       <workItem from="1576316320277" duration="3040000" />
       <workItem from="1576329013714" duration="445000" />
       <workItem from="1576331911798" duration="8150000" />
+      <workItem from="1576493223724" duration="27000" />
     </task>
     <servers />
   </component>
@@ -196,10 +246,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="368" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1576493229188">
+      <screen x="0" y="40" width="1368" height="872" />
+    </state>
+    <state x="368" y="300" key="com.intellij.ide.util.TipDialog/0.40.1368.872/2736.504.1920.1040@0.40.1368.872" timestamp="1576493229188" />
   </component>
 </project>

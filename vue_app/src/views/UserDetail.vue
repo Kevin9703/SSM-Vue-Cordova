@@ -85,10 +85,10 @@ export default {
     name: 'UserDetail',
     data() {
         return {
-            headimage: require('../assets/default.jpg'),
-            icon:'',
-            userId:'',
-            userName:'',
+            headimage: require('../assets/123.jpg'),
+            icon: require('../assets/123.jpg'),
+            userId:'null',
+            userName:'null',
         }
     },
     mounted(){

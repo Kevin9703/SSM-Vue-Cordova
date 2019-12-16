@@ -3,16 +3,36 @@
     <div
       v-for="item in goods"
       :key="item.index"
+      class="card"
+      style="text-align:center"
     >
-      <van-row>
-        <van-card
+      <router-link :to="&quot;/GoodDetail/&quot; + item.goodId">
+        <van-col span="12">
+          <van-image
+            width="150"
+            height="120"
+            :src="item.photo1"
+          />
+          <br>
+          <span class="name">{{ item.goodName }}</span>      
+          <br>
+          <van-col span="12">
+            <span class="price">¥ {{ item.price }}</span>
+          </van-col>
+          <van-col span="10">
+            <span class="number">在售 {{ item.number }} 件</span>
+          </van-col>
+          <br>
+          <br>
+        </van-col>
+      </router-link>
+      <!-- <van-card
           :num="item.number"
           :price="item.price"
           :desc="item.describe"
           :title="item.goodName"
           :thumb="item.photo1"
-        />
-      </van-row>
+        /> -->
     </div>
   </div>
 </template>
@@ -21,6 +41,9 @@
 import Vue from 'vue';
 import { Row, Col } from 'vant';
 import { Card } from 'vant';
+import { Image } from 'vant';
+
+Vue.use(Image);
 
 Vue.use(Card);
 
@@ -30,7 +53,7 @@ Vue.use(Row).use(Col);
         name: 'GoodsCard',
         data() {
             return {
-                
+                photo:require('../assets/123.jpg'),
             }
         },
         props: {
@@ -42,6 +65,18 @@ Vue.use(Row).use(Col);
     }
 </script>
 
-<style lang="" scoped>
+<style scoped>
+.name{
+  font-size:15px;
+  color: black;
+}
+.price{
+  color:orange;
+  font-size:16px;
+}
+.number{
+  font-size:8px;
+  color:gray;
+}
     
 </style>
