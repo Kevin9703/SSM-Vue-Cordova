@@ -136,7 +136,8 @@ export default {
                     axios.post('http://localhost:8090/androidApp/Goods/DeleteGoods',{
                         goodId : this.$route.params.goodId,
                     });
-                    Notify({ type: 'primary', message: '删除成功' });
+                    Notify({ type: 'danger', message: '删除成功' });
+                    window.history.go(-1);
                 }).catch(() => {
                     // on cancel
                     return;

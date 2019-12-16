@@ -11,14 +11,14 @@
           <van-image
             width="70"
             height="70"
-            :src="headimage"
+            :src="icon"
             radius="10"
           />
         </van-col>
         <van-col span="15">
-          <span class="name">babadalal</span>
+          <span class="name">{{ userName }}</span>
           <br>
-          <span>这里是个人简介</span>
+          <span>用户名:{{ userId }}</span>
         </van-col>
         <van-col span="1">
           <br>
@@ -67,6 +67,7 @@ import { Row, Col } from 'vant';
 import { Cell, CellGroup } from 'vant';
 import { Icon } from 'vant';
 import { Image } from 'vant';
+import axios from 'axios';
 
 Vue.use(Image);
 
@@ -84,7 +85,10 @@ export default {
     name: 'UserDetail',
     data() {
         return {
-            headimage: require('../assets/123.jpg'),
+            headimage: require('../assets/default.jpg'),
+            icon:'',
+            userId:'',
+            userName:'',
         }
     },
     methods: {
@@ -106,6 +110,16 @@ export default {
         showDetail(){
           Toast('显示个人详情界面')
         },
+        get_info(){
+          axios.get('http://localhost:8090/androidApp/User/GetUserInfo')
+          .then(response=>{
+            // eslint-disable-next-line no-console
+            console.log(response)
+            this.userName=response.data.userName;
+            this.userId=response.data.userId;
+            this.icon=response.data.icon;
+          })
+        }
     },
 }
 </script>
