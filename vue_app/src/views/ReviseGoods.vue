@@ -105,10 +105,12 @@ export default {
             photo1:'',
             photo2:'',
             photo3:'',
+            good_id:'',
         }
     },
     created () {
-        this.get_Goods()
+        this.get_Goods();
+        this.get_id();
     },
     methods: {
         onClickLeft() {
@@ -176,6 +178,9 @@ export default {
             console.log(error);
             })
         },
+        get_id(){
+          this.good_id = this.$route.params.goodId;
+        }
     },
 }
 </script>
