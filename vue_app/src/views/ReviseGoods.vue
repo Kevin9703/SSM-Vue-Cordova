@@ -6,8 +6,6 @@
         left-text="返回"
         left-arrow
         @click-left="onClickLeft"
-        right-text="提交"
-        @click-right="submitInfo"
       />
     </div>
 
@@ -62,6 +60,16 @@
         size="large"
       >
         删除此商品
+      </van-button>
+    </div>
+    <div style="text-align:center">
+      <van-button
+        type="primary"
+        @click="submitInfo"
+        style="width: 90%;margin-top:30px;"
+        size="large"
+      >
+        提交
       </van-button>
     </div>
   </div>
