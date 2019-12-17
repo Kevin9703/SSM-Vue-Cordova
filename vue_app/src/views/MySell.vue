@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="search">
+    <div class="top">
       <van-nav-bar
         title="我卖出的商品"
         left-text="返回"
@@ -68,7 +68,7 @@ export default {
           count: 0,
           isLoading: false,
           searchList: [],
-          goodsList: [{"goodId":4,"userId":"001","goodName":"篮球","number":1,"price":88,"describe":"好！","phone1":null,"phone2":null,"phone3":null},{"goodId":6,"userId":"009","goodName":"足球","number":1,"price":55,"describe":"好！","phone1":null,"phone2":null,"phone3":null},{"goodId":7,"userId":"005","goodName":"电脑","number":1,"price":2000,"describe":null,"phone1":null,"phone2":null,"phone3":null},{"goodId":8,"userId":"008","goodName":"电脑","number":1,"price":3000,"describe":null,"phone1":null,"phone2":null,"phone3":null}],
+          goodsList: [{"goodId":1,"userId":"abbadalal","goodName":"test","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')},{"goodId":2,"userId":"abbadalal","goodName":"test2","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')},{"goodId":3,"userId":"abbadalal","goodName":"test3","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')},{"goodId":4,"userId":"abbadalal","goodName":"test4","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')},{"goodId":5,"userId":"abbadalal","goodName":"test5","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')}],
         }     
     },
     mounted(){
@@ -120,7 +120,7 @@ export default {
 
 
 <style scoped>
-  .search{
+  .top{
     position:sticky;
     top:0px;
     z-index: 1;

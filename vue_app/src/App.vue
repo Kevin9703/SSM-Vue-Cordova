@@ -2,30 +2,19 @@
   <div
     id="app"
   >
-    <!-- <div
-      id="nav"
-      style="text-align: center; margin-top:30px;"
-    >
-      <router-link to="/">
-        Home
-      </router-link> |
-      <router-link to="/about">
-        About
-      </router-link>
-    </div> -->
     <router-view />
-    <!-- 登录和注册页面不显示底部导航栏 -->
+    <!-- 不显示底部导航栏 -->
     <div
-      v-if="$route.path!=='/login' && $route.path!=='/register'"
+      v-if="$route.path!=='/login' && $route.path!=='/register'&& $route.name!=='PostDetail'"
       class="nav"
     >
       <van-tabbar v-model="active">
         <van-tabbar-item
           name="home"
-          icon="home-o"
+          icon="chat-o"
           to="/"
         >
-          主页
+          圈子
         </van-tabbar-item>
         <van-tabbar-item
           name="allItem"

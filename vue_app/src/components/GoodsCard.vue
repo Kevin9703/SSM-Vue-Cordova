@@ -12,6 +12,7 @@
             width="150"
             height="120"
             :src="item.photo1"
+            fit="contain"
           />
           <br>
           <span class="name">{{ item.goodName }}</span>      

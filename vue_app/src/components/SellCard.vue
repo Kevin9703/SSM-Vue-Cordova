@@ -15,7 +15,7 @@
           <div slot="footer">
             <router-link :to="&quot;/ReviseGoods/&quot; + item.goodId">
               <van-button
-                size="mini"
+                size="small"
                 round
                 type="warning"
               >

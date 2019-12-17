@@ -85,7 +85,7 @@
         data() {
             return {
                 fileList: [],
-                icon: require('../assets/123.jpg'),
+                icon: require('../assets/default.jpg'),
                 userId:'null',
                 userName:'null',
                 phone:'null',

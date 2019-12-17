@@ -29,6 +29,7 @@
             <van-image
               width="10rem"
               height="10rem"
+              fit="contain"
               :src="item.photo"
             />
             <br>

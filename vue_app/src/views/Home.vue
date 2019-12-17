@@ -2,6 +2,29 @@
   <div
     class="home"
   >
+    <div class="top">
+      <van-row
+        type="flex"
+        justify="center"
+        align="bottom"
+      >
+        <van-col span="21">
+          <van-icon
+            name="chat-o"
+            size="40"
+          />
+          圈子
+        </van-col>
+        <van-col span="2">
+          <van-icon
+            name="edit"
+            size="25"
+            @click="click"
+          />
+        </van-col>
+      </van-row>
+      <div style="margin-top:28px" />
+    </div>
     <div>
       <van-pull-refresh
         v-model="isLoading"
@@ -20,14 +43,20 @@ import Vue from 'vue';
 import axios from 'axios';
 import PostCard from '../components/PostCard';
 import { Tabbar, TabbarItem } from 'vant';
+import { Row, Col } from 'vant';
 import { Swipe, SwipeItem } from 'vant';
 import { Image,Toast } from 'vant';
 import { PullRefresh } from 'vant';
+import { Divider } from 'vant';
+import { Icon } from 'vant';
+
+Vue.use(Icon);
 
 Vue.use(PullRefresh);
-
+Vue.use(Divider);
 Vue.use(Image);
 Vue.use(Toast);
+Vue.use(Row).use(Col);
 
 Vue.use(Swipe).use(SwipeItem);
 
@@ -43,37 +72,36 @@ export default {
     return{
         isLoading: false,
         refresh_text:'',
-        images: require('../assets/123.jpg'),
         postList:[
                   {
                     postId:1,
                     userId:'babadalal',
-                    details:'IT之家12月17日消息 今日，移动应用数据分析平台Sensor Tower发布了最新研究报告，带来了2019年11月期间中国手游产品在海外市场下载排行榜单。',
-                    title: '11月中国手游海外下载排行',
-                    photo: 'null',
-                    icon: 'null',
-                    postTime: '2019-12-17',
-                    totalNumber:'12',
+                    details:'IT之家12月16日消息 在12月初的夏威夷骁龙技术峰会上，高通正式发布了新一代旗舰移动平台骁龙865。',
+                    title: '性能猛增！高通骁龙865原型机及基准跑分全公布',
+                    photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191216_220341_424.jpg',
+                    icon: require('../assets/default.jpg'),
+                    postTime: '2019-12-12 16:30',
+                    totalNumber:'3',
                   },
                   {
                     postId:2,
                     userId:'babadalal',
-                    details:'IT之家12月17日消息 今日，移动应用数据分析平台Sensor Tower发布了最新研究报告，带来了2019年11月期间中国手游产品在海外市场下载排行榜单。',
-                    title: '11月中国手游海外下载排行',
-                    photo: 'null',
-                    icon: 'null',
-                    postTime: '2019-12-17',
-                    totalNumber:'12',
+                    details:'IT之家12月17日消息 今天下午，DxOMark网站正式公布了华为Mate30 Pro 5G版相机得分，其中拍照得分134分，视频拍摄得分102分，总分为123分，超过华为Mate30 Pro、小米CC9 Pro尊享版获得DxOMark手机榜单第一名。',
+                    title: 'DxOMark公布华为Mate30 Pro 5G版相机得分，123分夺第一',
+                    photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191217_161518_254.png',
+                    icon: require('../assets/default.jpg'),
+                    postTime: '2019-12-12 16:30',
+                    totalNumber:'3',
                   },
                   {
                     postId:3,
                     userId:'babadalal',
-                    details:'IT之家12月17日消息 今日，移动应用数据分析平台Sensor Tower发布了最新研究报告，带来了2019年11月期间中国手游产品在海外市场下载排行榜单。',
-                    title: '11月中国手游海外下载排行',
-                    photo: 'null',
-                    icon: 'null',
-                    postTime: '2019-12-17',
-                    totalNumber:'12',
+                    details:'IT之家12月17日消息 上周，腾讯视频、爱奇艺两大视频网站平台均在会员制基础上，推出了超前点播付费模式。会员用户可花费50元购买加速权益包，始终超前看6集《庆余年》。',
+                    title: '买会员还要再花钱，腾讯视频王娟回应《庆余年》争议：对会员的消费心理不够体贴',
+                    photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191217_120735_266.png',
+                    icon: require('../assets/default.jpg'),
+                    postTime: '2019-12-12 16:30',
+                    totalNumber:'3',
                   },
                 ],
     }
@@ -83,16 +111,17 @@ export default {
   },
   methods: {
     get_allPosts(){
-              axios.get('http://localhost:8090/androidApp/Comment/FindAllForums')
-        .then(response=>{
-          // eslint-disable-next-line no-console
-          console.log(response);
-          this.postList=response.data;
-          // eslint-disable-next-line no-console
-          console.log("goodsList",this.goodsList);
-          setTimeout(() => {
-            this.refresh_text = "刷新成功！";
-          }, 500);
+        axios.get('http://localhost:8090/androidApp/Comment/FindAllForums')
+          .then(response=>{
+            // eslint-disable-next-line no-console
+            console.log(response);
+            this.postList=response.data;
+            // eslint-disable-next-line no-console
+            console.log("goodsList",this.goodsList);
+            setTimeout(() => {
+              this.refresh_text = "刷新成功！";
+
+            }, 500);
         })
         .catch(error=>{
           // eslint-disable-next-line no-console
@@ -100,8 +129,12 @@ export default {
           setTimeout(() => {
             Toast("网络开小差了，请稍后再试！")
             this.refresh_text="刷新失败！";
+            this.isLoading = false;
           }, 500);
         })
+    },
+    click(){
+      Toast('submit');
     }
   },
 }
@@ -113,4 +146,12 @@ export default {
   height: 100%;
   background-color: rgb(247,247,247);
 }
+  .top{
+    position:sticky;
+    top:0px;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+    box-shadow:1px 1px 3px #cecece;
+  }
 </style>

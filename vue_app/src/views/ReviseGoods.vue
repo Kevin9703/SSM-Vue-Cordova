@@ -116,7 +116,7 @@ export default {
             good_id:'',
         }
     },
-    created () {
+    mounted () {
         this.get_Goods();
         this.get_id();
     },

@@ -17,7 +17,7 @@
         </div>
       </van-search>
     </div>
-    <div>
+    <div style="margin-top:5px;">
       <van-pull-refresh
         v-model="isLoading"
         @refresh="get_allGoods"
@@ -66,7 +66,7 @@ export default {
           count: 0,
           isLoading: false,
           searchList: [],
-          goodsList: [{"goodId":4,"userId":"001","goodName":"篮球","number":1,"price":88,"describe":"好！","phone1":null,"phone2":null,"phone3":null},{"goodId":6,"userId":"009","goodName":"足球","number":1,"price":55,"describe":"好！","phone1":null,"phone2":null,"phone3":null},{"goodId":7,"userId":"005","goodName":"电脑","number":1,"price":2000,"describe":null,"phone1":null,"phone2":null,"phone3":null},{"goodId":8,"userId":"008","goodName":"电脑","number":1,"price":3000,"describe":null,"phone1":null,"phone2":null,"phone3":null}],
+          goodsList: [{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null}],
         }     
     },
     mounted(){
@@ -150,6 +150,7 @@ export default {
     position:sticky;
     top:0px;
     z-index: 1;
+    box-shadow:1px 1px 3px #cecece;
   }
   .refresh{
     z-index:2;
