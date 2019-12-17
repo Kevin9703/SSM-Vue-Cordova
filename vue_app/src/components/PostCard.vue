@@ -36,7 +36,7 @@
               <span style="color:grey;font-size:12px">{{ item.postTime }}</span>
             </van-col>
             <span><van-icon name="comment-o" /></span>
-            <span style="color:grey;font-size:12px;"> {{ totalNumber }}</span>
+            <span style="color:grey;font-size:12px;"> {{ item.totalNumber }}</span>
           </van-col>
         </van-row>
         <van-divider />
