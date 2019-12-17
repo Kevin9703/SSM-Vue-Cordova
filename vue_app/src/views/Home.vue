@@ -78,6 +78,9 @@ export default {
                 ],
     }
   },
+  mounted(){
+    this.get_allPosts();
+  },
   methods: {
     get_allPosts(){
               axios.get('http://localhost:8090/androidApp/Comment/FindAllForums')
