@@ -12,7 +12,7 @@
                 round
                 width="35px"
                 height="35px"
-                :src="item.photo"
+                :src="item.icon"
               />
             </div>
           </van-col>
