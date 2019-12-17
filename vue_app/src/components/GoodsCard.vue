@@ -26,13 +26,6 @@
           <br>
         </van-col>
       </router-link>
-      <!-- <van-card
-          :num="item.number"
-          :price="item.price"
-          :desc="item.describe"
-          :title="item.goodName"
-          :thumb="item.photo1"
-        /> -->
     </div>
   </div>
 </template>
@@ -75,7 +68,7 @@ Vue.use(Row).use(Col);
   font-size:16px;
 }
 .number{
-  font-size:8px;
+  font-size:10px;
   color:gray;
 }
     

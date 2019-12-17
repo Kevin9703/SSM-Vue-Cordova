@@ -17,10 +17,7 @@
         </div>
       </van-search>
     </div>
-    <div
-      class="refresh"
-      id="show"
-    >
+    <div>
       <van-pull-refresh
         v-model="isLoading"
         @refresh="get_allGoods"

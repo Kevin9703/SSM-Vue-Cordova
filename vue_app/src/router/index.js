@@ -112,6 +112,14 @@ const routes = [
     },
     component: () => import('../views/GoodDetail.vue')
   },
+  {
+    path: '/PostDetail/:postId',
+    name: 'PostDetail',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/PostDetail.vue')
+  },
 ]
 
 const router = new VueRouter({
