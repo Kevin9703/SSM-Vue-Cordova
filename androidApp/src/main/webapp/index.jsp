@@ -23,7 +23,8 @@
                     type:"post",
                     success:function (data) {
                         //data为后端传回的数据，类型为dataType
-                        alert(data);
+                        var jsonData = JSON.stringify(data)
+                        alert(jsonData)
                     }
                 })
             })
@@ -40,7 +41,8 @@
                     type:"post",
                     success:function (data) {
                         //data为后端传回的数据，类型为dataType
-                        alert(data);
+                        var jsonData = JSON.stringify(data)
+                        alert(jsonData)
                     }
                 })
             })
@@ -78,6 +80,106 @@
                 })
             })
         })
+        $(function () {
+            $("#btn4").click(function () {
+                alert("发送ajax5");
+                $.ajax({
+                    url:"/androidApp/Goods/AddGoods",
+                    contentType:"application/json;charset=UTF-8",
+                    dataType:"json",
+                    data:'{"goodName":"排球","number":"1","price":"48","describe":"一般","photo1":"0"}',
+                    type:"post",
+                    success:function (data) {
+                        //data为后端传回的数据，类型为dataType
+                        var jsonData = JSON.stringify(data)
+                        alert(jsonData)
+                    }
+                })
+            })
+        })
+        $(function () {
+            $("#btn5").click(function () {
+                alert("发送ajax5");
+                $.ajax({
+                    url:"/androidApp/Goods/UpdateGoods",
+                    contentType:"application/json;charset=UTF-8",
+                    dataType:"json",
+                    data:'{"goodId":"10"}',
+                    type:"post",
+                    success:function (data) {
+                        //data为后端传回的数据，类型为dataType
+                        var jsonData = JSON.stringify(data)
+                        alert(jsonData)
+                    }
+                })
+            })
+        })
+        $(function () {
+            $("#btn6").click(function () {
+                alert("发送ajax6");
+                $.ajax({
+                    url:"/androidApp/Goods/DeleteGoods",
+                    contentType:"application/json;charset=UTF-8",
+                    dataType:"json",
+                    data:'{"goodId":"10"}',
+                    type:"post",
+                    success:function (data) {
+                        //data为后端传回的数据，类型为dataType
+                        var jsonData = JSON.stringify(data)
+                        alert(jsonData)
+                    }
+                })
+            })
+        })
+        $(function () {
+            $("#btn7").click(function () {
+                alert("发送ajax7");
+                $.ajax({
+                    url:"/androidApp/User/GetUserInfo",
+                    contentType:"application/json;charset=UTF-8",
+                    dataType:"json",
+                    type:"get",
+                    success:function (data) {
+                        //data为后端传回的数据，类型为dataType
+                        var jsonData = JSON.stringify(data)
+                        alert(jsonData)
+                    }
+                })
+            })
+        })
+        $(function () {
+            $("#btn8").click(function () {
+                alert("发送ajax8");
+                $.ajax({
+                    url:"/androidApp/Comment/FindAllForums",
+                    contentType:"application/json;charset=UTF-8",
+                    dataType:"json",
+                    type:"get",
+                    success:function (data) {
+                        //data为后端传回的数据，类型为dataType
+                        var jsonData = JSON.stringify(data)
+                        alert(jsonData)
+                    }
+                })
+            })
+        })
+        $(function () {
+            $("#btn9").click(function () {
+                alert("发送ajax9");
+                $.ajax({
+                    url:"/androidApp/Comment/FindAllComments",
+                    contentType:"application/json;charset=UTF-8",
+                    dataType:"json",
+                    data:'{"postId":"001"}',
+                    type:"post",
+                    success:function (data) {
+                        //data为后端传回的数据，类型为dataType
+                        var jsonData = JSON.stringify(data)
+                        alert(jsonData)
+                    }
+                })
+            })
+        })
     </script>
 </head>
 <body>
@@ -85,6 +187,11 @@
     <button id="btn1">注册</button>
     <button id="btn2">商品</button>
     <button id="btn3">查找货物</button>
-
+    <button id="btn4">新增货物</button>
+    <button id="btn5">修改货物</button>
+    <button id="btn6">删除货物</button>
+    <button id="btn7">获取成员</button>
+    <button id="btn8">获取帖子</button>
+    <button id="btn9">获取评论</button>
 </body>
 </html>

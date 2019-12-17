@@ -6,7 +6,49 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f76edd-1e3a-4ec7-9c9f-f5000a1e8dbd" name="Default Changelist" comment="" />
+    <list default="true" id="55f76edd-1e3a-4ec7-9c9f-f5000a1e8dbd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/commentDao/ICommentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/Forum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/ForumAndIcon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/UserNow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/commentService/ICommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/commentService/Impl/ICommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/goodsDao/IGoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/goodsDao/IGoodsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/userDao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/userDao/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/goodsService/IGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/goodsService/IGoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/goodsService/Impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/goodsService/Impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/userService/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/userService/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/userService/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/userService/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/goodsDao/IGoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/goodsDao/IGoodsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/userDao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/userDao/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/Goods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/goodsService/IGoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/goodsService/IGoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/goodsService/Impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/goodsService/Impl/GoodsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/userService/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/userService/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/userService/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/userService/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dao/goodsDao/IGoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/goodsDao/IGoodsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dao/userDao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/userDao/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/Goods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/goodsService/IGoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/goodsService/IGoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/goodsService/Impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/goodsService/Impl/GoodsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/userService/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/userService/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/userService/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/userService/Impl/UserServiceImpl.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +80,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHubDesktop/app-2.2.4/resources/app/git/mingw64/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32528734" />
@@ -185,6 +227,9 @@
       <workItem from="1576316320277" duration="3040000" />
       <workItem from="1576329013714" duration="445000" />
       <workItem from="1576331911798" duration="8150000" />
+      <workItem from="1576392265683" duration="17342000" />
+      <workItem from="1576476025459" duration="5630000" />
+      <workItem from="1576548290574" duration="5309000" />
     </task>
     <servers />
   </component>
@@ -196,10 +241,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

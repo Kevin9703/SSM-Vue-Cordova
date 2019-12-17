@@ -18,23 +18,25 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public int findUserById(String userId) {
-        return userLoginDao.findUserById(userId);
+    public User findUserById(String userId) {
+        User returnUser = userLoginDao.findUserById(userId);
+        returnUser.setPassword(null);
+        return returnUser;
     }
 
     /**
      * 注册用户
      * 用户已经存在，返回0
      * 用户创建成功，返回1
-     * 创建失败，返回-1
      * @param user
      * @return
      */
     @Override
     public int userRegister(User user) {
-        if (findUserById(user.getUserId())==1){
-            return 0;
+        if (findUserById(user.getUserId())==null){//找不到
+            userLoginDao.userRegister(user);
+            return 1;
         }else
-            return userLoginDao.userRegister(user);
+            return 0;
     }
 }

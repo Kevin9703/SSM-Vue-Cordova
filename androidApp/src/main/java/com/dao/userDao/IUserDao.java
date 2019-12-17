@@ -16,10 +16,11 @@ public interface IUserDao {
     int userLogin(@Param("userId") String userId, @Param("password") String password);
 
     //用户注册
-    @Insert("insert into userInfo(userId,password,sex,address,phone,qq) values(#{userId},#{password},#{sex},#{address},#{phone},#{qq})")
+    @Insert("insert into userInfo(userId,password,sex,address,phone,qq,icon) values(#{userId},#{password},#{sex},#{address},#{phone},#{qq},#{icon})")
     int userRegister(User user);
 
     //通过id查找用户
-    @Select("select count(*) from userInfo where userId = #{userId}")
-    int findUserById(String userId);
+    @Select("select * from userInfo where userId = #{userId}")
+    User findUserById(String userId);
+
 }

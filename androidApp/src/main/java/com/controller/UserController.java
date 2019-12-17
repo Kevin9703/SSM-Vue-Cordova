@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.domain.User;
+import com.domain.UserNow;
 import com.service.userService.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -47,29 +48,36 @@ public class UserController {
         String userId = map.get("userId");
         String password = map.get("password");
         System.out.println(map.get("userId")+map.get("password"));
-        if (accountService.userLogin(userId,password)!=0)
+        if (accountService.userLogin(userId,password)!=0){
+            UserNow.setUserIdNow(userId);
             return "success";
+        }
         else
             return "fail";
     }
 
     /**
-     *  模拟ajax异步请求
-     * @param user   导入jackson.jar可以实现javabean对象与json之间的转换
+     * 注册
+     * @param user
      * @return
      */
     @CrossOrigin
     @RequestMapping(value = "/Register",method = RequestMethod.POST)
     @ResponseBody
     public String Register(@RequestBody User user){
-        int returnValue = accountService.userRegister(user);
-        System.out.println(returnValue);
-        if (returnValue==1){
+        System.out.println(user);
+        if (accountService.userRegister(user)==1){
             return "success";
         }else
             return "fail";
     }
 
+    @CrossOrigin
+    @RequestMapping(value = "/GetUserInfo",method = RequestMethod.GET)
+    @ResponseBody
+    public User getUserInfo(){
+        return accountService.findUserById(UserNow.getUserIdNow());
+    }
 
 
     /**

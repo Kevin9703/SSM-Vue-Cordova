@@ -1,5 +1,7 @@
 package com.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ public class User implements Serializable {
 
     private String userId;
     private String userName;
+
     private String password;
     private String sex;
     private String address;

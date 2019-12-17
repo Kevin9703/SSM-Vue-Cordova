@@ -25,5 +25,7 @@ public interface IUserService {
      * @param userId
      * @return 找到返回1 没找到返回0
      */
-    int findUserById(String userId);
+    User findUserById(String userId);
+
+
 }

@@ -1,10 +1,7 @@
 package com.dao.goodsDao;
 
 import com.domain.Goods;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,9 +17,9 @@ public interface IGoodsDao {
     List<Goods> findAllGoods();
 
     //更新商品
-    @Update("update salesList set userId=#{userId},goodName=#{goodName},number=#{number}," +
+    @Update("update salesList set goodName=#{goodName},number=#{number}," +
             "price=#{price},describe=#{describe},photo1=#{photo1},photo2=#{photo2},photo3=#{photo3}" +
-            " where userId = #{getId} and goodName = #{getName}")
+            " where goodId = #{goodId}")
     int updateGoods(Goods goods);
 
     //新增商品
@@ -30,14 +27,24 @@ public interface IGoodsDao {
             "values(#{userId},#{goodName},#{number},#{price},#{describe},#{photo1},#{photo2},#{photo3})")
     int addGoods(Goods goods);
 
-    //通过用户和商品名 查商品
+    //通过goodId查商品
+    @Select("select * from salesList where goodId = #{goodId}")
+    Goods findGoodsById(int goodId);
+
+    //通过userId和goodName查商品
     @Select("select * from salesList where userId = #{userId} and goodName = #{goodName}")
-    Goods findGoodsById(String userId,String goodName);
+    Goods findGoodsByIdAndName(@Param("userId") String userId,@Param("goodName") String goodName);
 
     //通过商品名查商品 模糊查询
     @Select("select * from salesList where goodName like CONCAT('%',#{goodName},'%')")
     List<Goods> findGoodsByName(String goodName);
 
-    @Delete("delete from salesList where userId = #{userId} and goodName = #{goodName}")
-    int deleteGoods(String userId,String goodName);
+    //通过商品id删除
+    @Delete("delete from salesList where goodId = #{goodId}")
+    int deleteGoods(int goodId);
+
+    //通过userId显示我卖的商品
+    @Select("select * from salesList where userId = #{userId}")
+    List<Goods> findMyGoods(String userId);
+
 }
