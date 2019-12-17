@@ -18,7 +18,7 @@
         <van-col span="15">
           <span class="name">{{ userName }}</span>
           <br>
-          <span>用户名:{{ userId }}</span>
+          <span>用户名 : {{ userId }}</span>
         </van-col>
         <van-col span="1">
           <br>
@@ -85,10 +85,10 @@ export default {
     name: 'UserDetail',
     data() {
         return {
-            headimage: require('../assets/default.jpg'),
-            icon:'',
-            userId:'',
-            userName:'',
+            headimage: require('../assets/123.jpg'),
+            icon: require('../assets/123.jpg'),
+            userId:'null',
+            userName:'null',
         }
     },
     mounted(){
@@ -111,7 +111,7 @@ export default {
           });
         },
         showDetail(){
-          Toast('显示个人详情界面')
+          this.$router.push({ path: 'MyDetail' })
         },
         get_info(){
           axios.get('http://localhost:8090/androidApp/User/GetUserInfo')

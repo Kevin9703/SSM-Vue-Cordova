@@ -6,8 +6,6 @@
         left-text="返回"
         left-arrow
         @click-left="onClickLeft"
-        right-text="发布"
-        @click-right="onClickRight"
       />
     </div>
 
@@ -55,7 +53,7 @@
         />
       </van-cell-group>
     </div>
-    <div>
+    <div style="margin-top:20px;">
       <van-uploader
         :after-read="afterRead1"
         v-model="imageList1"

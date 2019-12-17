@@ -96,6 +96,30 @@ const routes = [
     },
     component: () => import('../views/MyDetail.vue')
   },
+  {
+    path: '/IconRevise',
+    name: 'IconRevise',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/IconRevise.vue')
+  },
+  {
+    path: '/GoodDetail/:goodId',
+    name: 'GoodDetail',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/GoodDetail.vue')
+  },
+  {
+    path: '/PostDetail/:postId',
+    name: 'PostDetail',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/PostDetail.vue')
+  },
 ]
 
 const router = new VueRouter({
