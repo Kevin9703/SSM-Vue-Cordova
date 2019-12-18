@@ -120,7 +120,7 @@ export default {
             // eslint-disable-next-line no-console
             setTimeout(() => {
               this.refresh_text = "刷新成功！";
-
+              this.isLoading = false;
             }, 500);
         })
         .catch(error=>{

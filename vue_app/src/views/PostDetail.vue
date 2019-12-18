@@ -310,6 +310,7 @@
                 .then(()=>{
                     Toast("评论成功！");
                     this.comment='';
+                    Toast('评论成功后列表长度',this.commentsList.length);
                     this.onLoad();
                 })
               }             
@@ -319,6 +320,7 @@
                 if (this.commentsList.length >= this.totalNumber) {
                   this.finished = true;
                   this.loading = false
+                  Toast(this.commentsList.length);
                 }
                 else{
                   for (let i = 0; i < 1; i++) {
