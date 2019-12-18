@@ -269,7 +269,7 @@
                 })
             },
             get_comments(){
-                axios.get('url')
+                axios.get('http://localhost:8090/Comment/FindAllComments')
                 .then(response=>{
                     // eslint-disable-next-line no-console
                     console.log(response);

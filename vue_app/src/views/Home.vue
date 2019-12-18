@@ -15,13 +15,14 @@
           />
           圈子
         </van-col>
-        <van-col span="2">
-          <van-icon
-            name="edit"
-            size="25"
-            @click="click"
-          />
-        </van-col>
+        <router-link to="NewPost">
+          <van-col span="2">
+            <span style="color:black;"><van-icon
+              name="edit"
+              size="25"
+            /></span>
+          </van-col>
+        </router-link>
       </van-row>
       <div style="margin-top:28px" />
     </div>
