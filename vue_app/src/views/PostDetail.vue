@@ -284,7 +284,7 @@
                 })
                 .then(response=>{
                     // eslint-disable-next-line no-console
-                    console.log(response);
+                    console.log("获得评论：",response);
                     this.commentsList=response.data;
                 }).catch(error=>{
                     // eslint-disable-next-line no-console
@@ -296,7 +296,7 @@
                 })
                 .then(list=>{
                     // eslint-disable-next-line no-console
-                    console.log(list);
+                    console.log("获得头像：",list);
                     this.iconList=list.data;
                 }).catch(err=>{
                   // eslint-disable-next-line no-console
