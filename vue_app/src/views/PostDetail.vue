@@ -5,147 +5,152 @@
       :key="item.index"
     >
       <div
-        style="padding-bottom: 50px;"
-        v-if="item.postId == postId"
+        v-for="icon in iconList"
+        :key="icon.index"
       >
         <div
-          class="top"
+          style="padding-bottom: 50px;"
+          v-if="item.postId == postId"
         >
-          <van-nav-bar
-            title="主题帖"
-            left-arrow
-            left-text="返回"
-            @click-left="onClickLeft"
-          />
-        </div>
-        <div>
-          <van-list
-            v-model="loading"
-            @load="onLoad"
-            :finished="finished"
-            finished-text="没有更多了"
+          <div
+            class="top"
           >
-            <div>
-              <van-row type="flex">
-                <van-col span="3">
-                  <div style="margin-left:5px;margin-top:5px;">
+            <van-nav-bar
+              title="主题帖"
+              left-arrow
+              left-text="返回"
+              @click-left="onClickLeft"
+            />
+          </div>
+          <div>
+            <van-list
+              v-model="loading"
+              @load="onLoad"
+              :finished="finished"
+              finished-text="没有更多了"
+            >
+              <div>
+                <van-row type="flex">
+                  <van-col span="3">
+                    <div style="margin-left:5px;margin-top:5px;">
+                      <van-image
+                        round
+                        width="35px"
+                        height="35px"
+                        :src="icon.icon"
+                      />
+                    </div>
+                  </van-col>
+                  <van-col
+                    span="10"
+                    style="margin-top:5px;"
+                  > 
+                    <li style="color:black;font-size:13px;list-style: none;">
+                      {{ item.userId }}
+                    </li> 
+                    <li style="color:grey;font-size:12px;list-style: none;">
+                      {{ item.postTime }}
+                    </li>       
+                  </van-col>
+                </van-row>
+                <van-row
+                  type="flex"
+                  justify="center"
+                >
+                  <van-col span="23">
+                    <li class="title">
+                      {{ item.title }}
+                    </li>      
+                    <li class="details">
+                      {{ item.details }}
+                    </li>
+                  </van-col>
+                </van-row>
+      
+                <van-row 
+                  type="flex"
+                  justify="center"
+                >
+                  <van-col span="23">
                     <van-image
-                      round
-                      width="35px"
-                      height="35px"
-                      :src="item.icon"
+                      :src="item.photo"
                     />
-                  </div>
-                </van-col>
-                <van-col
-                  span="10"
-                  style="margin-top:5px;"
-                > 
-                  <li style="color:black;font-size:13px;list-style: none;">
-                    {{ item.userId }}
-                  </li> 
-                  <li style="color:grey;font-size:12px;list-style: none;">
-                    {{ item.postTime }}
-                  </li>       
-                </van-col>
-              </van-row>
+                  </van-col>
+                </van-row>
+              </div>
+              <div class="fenge" />
               <van-row
                 type="flex"
                 justify="center"
+                style="margin-top:15px;"
               >
                 <van-col span="23">
-                  <li class="title">
-                    {{ item.title }}
-                  </li>      
-                  <li class="details">
-                    {{ item.details }}
-                  </li>
+                  全部评论
                 </van-col>
               </van-row>
-      
-              <van-row 
-                type="flex"
-                justify="center"
+              <van-divider />
+              <div
+                v-for="items in commentsList"
+                :key="items.index"
               >
-                <van-col span="23">
-                  <van-image
-                    :src="item.photo"
-                  />
-                </van-col>
-              </van-row>
-            </div>
-            <div class="fenge" />
-            <van-row
-              type="flex"
-              justify="center"
-              style="margin-top:15px;"
-            >
-              <van-col span="23">
-                全部评论
-              </van-col>
-            </van-row>
-            <van-divider />
-            <div
-              v-for="items in commentsList"
-              :key="items.index"
-            >
-              <div v-if="items.postId == postId">
-                <div>
-                  <van-row
-                    type="flex"
-                    justify="center"
-                    style="margin-top:10px"
-                  >
-                    <van-col span="23">
-                      <van-col span="3">
-                        <van-image
-                          round
-                          width="35px"
-                          height="35px"
-                          :src="item.icon"
-                        />
-                      </van-col>
-                      <van-col span="21">
-                        {{ items.userId }}
-                        <van-row>
-                          <van-col span="21">
-                            <li style="font-size:10px;list-style: none;">
-                              第{{ items.indexNumber }}楼 {{ items.commentTime }}
-                            </li>
-                          </van-col>
+                <div v-if="items.postId == postId">
+                  <div>
+                    <van-row
+                      type="flex"
+                      justify="center"
+                      style="margin-top:10px"
+                    >
+                      <van-col span="23">
+                        <van-col span="3">
+                          <van-image
+                            round
+                            width="35px"
+                            height="35px"
+                            :src="item.icon"
+                          />
+                        </van-col>
+                        <van-col span="21">
+                          {{ items.userId }}
+                          <van-row>
+                            <van-col span="21">
+                              <li style="font-size:10px;list-style: none;">
+                                第{{ items.indexNumber }}楼 {{ items.commentTime }}
+                              </li>
+                            </van-col>
+                          </van-row>
+                        </van-col>
+                        <van-row class="comment">
+                          {{ items.commentDetails }}
                         </van-row>
                       </van-col>
-                      <van-row class="comment">
-                        {{ items.commentDetails }}
-                      </van-row>
-                    </van-col>
-                  </van-row>
-                  <van-divider />
+                    </van-row>
+                    <van-divider />
+                  </div>
                 </div>
               </div>
-            </div>
-          </van-list>
-        </div>
+            </van-list>
+          </div>
       
-        <div class="bottom">
-          <van-field
-            v-model="comment"
-            clearable
-            placeholder="回复楼主"
-            rows="1"
-            type="textarea"
-            autosize
-          >
-            <van-button
-              slot="button"
-              size="small"
-              type="info"
-              @click="subComment"
+          <div class="bottom">
+            <van-field
+              v-model="comment"
+              clearable
+              placeholder="回复楼主"
+              rows="1"
+              type="textarea"
+              autosize
             >
-              发送
-            </van-button>
-            <van-field />
-          </van-field>
+              <van-button
+                slot="button"
+                size="small"
+                type="info"
+                @click="subComment"
+              >
+                发送
+              </van-button>
+              <van-field />
+            </van-field>
+          </div>
         </div>
       </div>
     </div>
@@ -183,6 +188,7 @@
                 loading: false,
                 totalNumber:3,
                 postId:'',
+                iconList:[],
                 postList:[{
                     postId:1,
                     userId:'babadalal',
@@ -281,6 +287,14 @@
                     // eslint-disable-next-line no-console
                     console.log(error);
                     Toast("网络开小差了，请稍后再试！");
+                });
+                axios.post('http://localhost:8090/androidApp/Comment/getIcon',{
+                  postId:this.postId,
+                })
+                .then(response=>{
+                    // eslint-disable-next-line no-console
+                    console.log(response);
+                    this.iconList=response.data;
                 })
             },
             subComment(){
