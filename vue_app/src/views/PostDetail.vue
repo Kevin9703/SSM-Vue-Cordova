@@ -298,6 +298,9 @@
                     // eslint-disable-next-line no-console
                     console.log(list);
                     this.iconList=list.data;
+                }).catch(err=>{
+                  // eslint-disable-next-line no-console
+                  console.log("获取头像错误",err);
                 })
             },
             subComment(){
