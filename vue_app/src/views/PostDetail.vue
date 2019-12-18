@@ -269,7 +269,7 @@
                 })
             },
             get_comments(){
-                axios.post('http://localhost:8090/androidApp/Comment/findAllComments',{
+                axios.post('http://localhost:8090/androidApp/Comment/FindAllComments',{
                   postId:this.postId,
                 })
                 .then(response=>{
