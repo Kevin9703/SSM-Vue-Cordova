@@ -81,7 +81,7 @@ export default {
                     photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191216_220341_424.jpg',
                     icon: require('../assets/default.jpg'),
                     postTime: '2019-12-12 16:30',
-                    totalNumber:'2',
+                    totalNumber:'3',
                   },
                   {
                     postId:2,
@@ -91,7 +91,7 @@ export default {
                     photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191217_161518_254.png',
                     icon: require('../assets/default.jpg'),
                     postTime: '2019-12-12 16:30',
-                    totalNumber:'1',
+                    totalNumber:'3',
                   },
                   {
                     postId:3,
@@ -101,7 +101,7 @@ export default {
                     photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191217_120735_266.png',
                     icon: require('../assets/default.jpg'),
                     postTime: '2019-12-12 16:30',
-                    totalNumber:'1',
+                    totalNumber:'3',
                   },
                 ],
     }

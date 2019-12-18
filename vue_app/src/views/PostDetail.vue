@@ -5,7 +5,6 @@
       :key="item.index"
     >
       <div
-        style="padding-bottom: 50px;"
         v-if="item.postId == postId"
       >
         <div
@@ -24,6 +23,7 @@
             @load="onLoad"
             :finished="finished"
             finished-text="没有更多了"
+            :immediate-check="false"
           >
             <div>
               <van-row type="flex">
@@ -190,7 +190,7 @@
                     photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191216_220341_424.jpg',
                     icon: require('../assets/default.jpg'),
                     postTime: '2019-12-12 16:30',
-                    totalNumber:'2',
+                    totalNumber:'3',
                   },
                   {
                     postId:2,
@@ -200,7 +200,7 @@
                     photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191217_161518_254.png',
                     icon: require('../assets/default.jpg'),
                     postTime: '2019-12-12 16:30',
-                    totalNumber:'1',
+                    totalNumber:'3',
                   },
                   {
                     postId:3,
@@ -210,7 +210,7 @@
                     photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191217_120735_266.png',
                     icon: require('../assets/default.jpg'),
                     postTime: '2019-12-12 16:30',
-                    totalNumber:'1',
+                    totalNumber:'3',
                   },],
                 comment:'',
                 commentsList:[
@@ -236,6 +236,14 @@
                         "userId":'babadalal',
                         "indexNumber":1,
                         "commentDetails":"帖子2评论1",
+                        "commentTime":"2019-12-17 17:42"
+                    },
+                                      {
+                        "postId":3,
+                        "icon":require('../assets/default.jpg'),
+                        "userId":'babadalal',
+                        "indexNumber":1,
+                        "commentDetails":"帖子3评论1",
                         "commentTime":"2019-12-17 17:42"
                     },
                 ],
@@ -333,10 +341,9 @@
     background-color: #d1d1d1;
 }
 .bottom{
-    position:fixed;
-    bottom: 0px;
+    position:sticky;
+    bottom:0px;
     z-index: 1;
-    width: 100%;
     box-shadow:1px 1px 4px #cecece;
   }
 </style>
