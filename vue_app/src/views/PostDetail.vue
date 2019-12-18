@@ -283,7 +283,7 @@
                 })
             },
             subComment(){
-                axios.post('url',{
+                axios.post('http://localhost:8090/androidApp/Comment/InsertComment',{
                     comment:this.comment,
                     postId:this.postId,
                   })
