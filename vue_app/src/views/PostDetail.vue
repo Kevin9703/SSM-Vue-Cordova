@@ -326,7 +326,6 @@
                 // 数据全部加载完成
                 if (this.commentsList.length >= this.totalNumber){
                   this.finished = true;
-                  Toast('没有更多了')
                 }    
               }, 500);
             }     
