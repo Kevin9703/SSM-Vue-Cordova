@@ -25,8 +25,6 @@
             :finished="finished"
             finished-text="没有更多了"
             :offset="50"
-            ref="check"
-            :immediate-check="false"
           >
             <div>
               <van-row type="flex">
@@ -319,10 +317,17 @@
             },
             onLoad() {
               setTimeout(() => {
-                Toast('获取数据中');
                 this.get_comments();
-                 this.loading = false;
-                 this.finished = true;
+                  for (let i = 0; i < 1; i++) {
+                    this.commentsList.push(this.commentsList.length + 1);
+                  }
+                  this.loading = false;
+                  // Toast('评论成功前列表长度',this.commentsList.length);
+                // 数据全部加载完成
+                if (this.commentsList.length >= this.totalNumber){
+                  this.finished = true;
+                  Toast('没有更多了')
+                }    
               }, 500);
             }     
         },
