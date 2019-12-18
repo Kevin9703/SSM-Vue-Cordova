@@ -256,7 +256,7 @@
               console.log(this.postId)
             },
             get_post(){
-                axios.get('url')
+                axios.get('http://localhost:8090/androidApp/Comment/FindAllForums')
                 .then(response=>{
                     // eslint-disable-next-line no-console
                     console.log(response);
@@ -269,7 +269,9 @@
                 })
             },
             get_comments(){
-                axios.get('http://localhost:8090/androidApp/Comment/FindAllComments')
+                axios.get('http://localhost:8090/androidApp/Comment/findAllComments',{
+                  postId:this.postId,
+                })
                 .then(response=>{
                     // eslint-disable-next-line no-console
                     console.log(response);
