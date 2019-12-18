@@ -269,7 +269,7 @@
                 })
             },
             get_comments(){
-                axios.get('http://localhost:8090/AndroidApp/Comment/FindAllComments')
+                axios.get('http://localhost:8090/androidApp/Comment/FindAllComments')
                 .then(response=>{
                     // eslint-disable-next-line no-console
                     console.log(response);
