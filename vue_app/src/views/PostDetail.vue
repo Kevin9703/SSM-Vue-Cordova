@@ -140,6 +140,7 @@
               slot="button"
               size="small"
               type="info"
+              @click="subComment"
             >
               发送
             </van-button>
