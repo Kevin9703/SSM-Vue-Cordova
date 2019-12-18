@@ -253,6 +253,9 @@
             this.get_post();
             this.get_comments();
         },
+        updated(){
+          this.get_comments();
+        },
         methods: {
             onClickLeft() {
                 this.$router.go(-1);
