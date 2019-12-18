@@ -294,10 +294,10 @@
                 axios.post('http://localhost:8090/androidApp/Comment/getIcon',{
                   postId:this.postId,
                 })
-                .then(response=>{
+                .then(list=>{
                     // eslint-disable-next-line no-console
-                    console.log(response);
-                    this.iconList=response.data;
+                    console.log(list);
+                    this.iconList=list.data;
                 })
             },
             subComment(){
