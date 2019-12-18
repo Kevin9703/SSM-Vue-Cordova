@@ -326,6 +326,8 @@
                 // 数据全部加载完成
                 if (this.commentsList.length >= this.totalNumber){
                   this.finished = true;
+                  this.loading = false;
+
                 }    
               }, 500);
             }     
