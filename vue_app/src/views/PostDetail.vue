@@ -19,113 +19,113 @@
           />
         </div>
         <div>
-          <van-list
+          <!-- <van-list
             v-model="loading"
             @load="onLoad"
             :finished="finished"
             finished-text="没有更多了"
             :offset="50"
-          >
-            <div>
-              <van-row type="flex">
-                <van-col span="3">
-                  <div style="margin-left:5px;margin-top:5px;">
-                    <van-image
-                      round
-                      width="35px"
-                      height="35px"
-                      :src="item.icon"
-                    />
-                  </div>
-                </van-col>
-                <van-col
-                  span="10"
-                  style="margin-top:5px;"
-                > 
-                  <li style="color:black;font-size:13px;list-style: none;">
-                    {{ item.userId }}
-                  </li> 
-                  <li style="color:grey;font-size:12px;list-style: none;">
-                    {{ item.postTime }}
-                  </li>       
-                </van-col>
-              </van-row>
-              <van-row
-                type="flex"
-                justify="center"
-              >
-                <van-col span="23">
-                  <li class="title">
-                    {{ item.title }}
-                  </li>      
-                  <li class="details">
-                    {{ item.details }}
-                  </li>
-                </van-col>
-              </van-row>
-      
-              <van-row 
-                type="flex"
-                justify="center"
-              >
-                <van-col span="23">
+          > -->
+          <div>
+            <van-row type="flex">
+              <van-col span="3">
+                <div style="margin-left:5px;margin-top:5px;">
                   <van-image
-                    :src="item.photo"
+                    round
+                    width="35px"
+                    height="35px"
+                    :src="item.icon"
                   />
-                </van-col>
-              </van-row>
-            </div>
-            <div class="fenge" />
+                </div>
+              </van-col>
+              <van-col
+                span="10"
+                style="margin-top:5px;"
+              > 
+                <li style="color:black;font-size:13px;list-style: none;">
+                  {{ item.userId }}
+                </li> 
+                <li style="color:grey;font-size:12px;list-style: none;">
+                  {{ item.postTime }}
+                </li>       
+              </van-col>
+            </van-row>
             <van-row
               type="flex"
               justify="center"
-              style="margin-top:15px;"
             >
               <van-col span="23">
-                全部评论
+                <li class="title">
+                  {{ item.title }}
+                </li>      
+                <li class="details">
+                  {{ item.details }}
+                </li>
               </van-col>
             </van-row>
-            <van-divider />
-            <div
-              v-for="items in commentsList"
-              :key="items.index"
+      
+            <van-row 
+              type="flex"
+              justify="center"
             >
-              <div v-if="items.postId == postId">
-                <div>
-                  <van-row
-                    type="flex"
-                    justify="center"
-                    style="margin-top:10px"
-                  >
-                    <van-col span="23">
-                      <van-col span="3">
-                        <van-image
-                          round
-                          width="35px"
-                          height="35px"
-                          :src="items.icon"
-                        />
-                      </van-col>
-                      <van-col span="21">
-                        {{ items.userId }}
-                        <van-row>
-                          <van-col span="21">
-                            <li style="font-size:10px;list-style: none;">
-                              第{{ items.indexNumber }}楼 {{ items.commentTime }}
-                            </li>
-                          </van-col>
-                        </van-row>
-                      </van-col>
-                      <van-row class="comment">
-                        {{ items.commentDetails }}
+              <van-col span="23">
+                <van-image
+                  :src="item.photo"
+                />
+              </van-col>
+            </van-row>
+          </div>
+          <div class="fenge" />
+          <van-row
+            type="flex"
+            justify="center"
+            style="margin-top:15px;"
+          >
+            <van-col span="23">
+              全部评论
+            </van-col>
+          </van-row>
+          <van-divider />
+          <div
+            v-for="items in commentsList"
+            :key="items.index"
+          >
+            <div v-if="items.postId == postId">
+              <div>
+                <van-row
+                  type="flex"
+                  justify="center"
+                  style="margin-top:10px"
+                >
+                  <van-col span="23">
+                    <van-col span="3">
+                      <van-image
+                        round
+                        width="35px"
+                        height="35px"
+                        :src="items.icon"
+                      />
+                    </van-col>
+                    <van-col span="21">
+                      {{ items.userId }}
+                      <van-row>
+                        <van-col span="21">
+                          <li style="font-size:10px;list-style: none;">
+                            第{{ items.indexNumber }}楼 {{ items.commentTime }}
+                          </li>
+                        </van-col>
                       </van-row>
                     </van-col>
-                  </van-row>
-                  <van-divider />
-                </div>
+                    <van-row class="comment">
+                      {{ items.commentDetails }}
+                    </van-row>
+                  </van-col>
+                </van-row>
+                <van-divider />
               </div>
             </div>
-          </van-list>
+          </div>
+          <!-- </van-list> -->
         </div>
       
         <div class="bottom">
@@ -316,21 +316,21 @@
                 })
               }             
             },
-            onLoad() {
-              setTimeout(() => {
-                  for (let i = 0; i < 1; i++) {
-                    this.commentsList.push(this.commentsList.length + 1);
-                  }
-                  this.loading = false;
-                  // Toast('评论成功前列表长度',this.commentsList.length);
-                // 数据全部加载完成
-                if (this.commentsList.length >= this.totalNumber){
-                  this.finished = true;
-                  this.loading = false;
+            // onLoad() {
+            //   setTimeout(() => {
+            //       for (let i = 0; i < 1; i++) {
+            //         this.commentsList.push(this.commentsList.length + 1);
+            //       }
+            //       this.loading = false;
+            //       // Toast('评论成功前列表长度',this.commentsList.length);
+            //     // 数据全部加载完成
+            //     if (this.commentsList.length >= this.totalNumber){
+            //       this.finished = true;
+            //       this.loading = false;
 
-                }    
-              }, 500);
-            }     
+            //     }    
+            //   }, 500);
+            // }     
         },
     }
 </script>
