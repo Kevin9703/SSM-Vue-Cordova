@@ -35,7 +35,7 @@
           />
         </div>
       </van-pull-refresh>
-    </div> 
+    </div>
   </div>
 </template>
 

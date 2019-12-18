@@ -120,6 +120,14 @@ const routes = [
     },
     component: () => import('../views/PostDetail.vue')
   },
+  {
+    path: '/NewPost',
+    name: 'NewPost',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/NewPost.vue')
+  },
 ]
 
 const router = new VueRouter({
