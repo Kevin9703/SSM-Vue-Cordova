@@ -269,7 +269,7 @@
                 })
             },
             get_comments(){
-                axios.get('http://localhost:8090/Comment/FindAllComments')
+                axios.get('http://localhost:8090/AndroidApp/Comment/FindAllComments')
                 .then(response=>{
                     // eslint-disable-next-line no-console
                     console.log(response);
@@ -281,7 +281,10 @@
                 })
             },
             subComment(){
-                axios.post('url',{comment:this.comment})
+                axios.post('url',{
+                    comment:this.comment,
+                    postId:this.postId,
+                  })
                 .then(()=>{
                     Toast("评论成功！");
                     this.comment='';
