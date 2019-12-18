@@ -284,6 +284,9 @@
                 })
             },
             subComment(){
+              if(this.comment==''){
+                Toast("评论不能为空！")
+              }else{
                 axios.post('http://localhost:8090/androidApp/Comment/InsertComment',{
                     commentDetails:this.comment,
                     postId:this.postId,
@@ -291,7 +294,9 @@
                 .then(()=>{
                     Toast("评论成功！");
                     this.comment='';
+                    this.onLoad();
                 })
+              }             
             },
             onLoad() {
               setTimeout(() => {
