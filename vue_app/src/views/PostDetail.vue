@@ -285,7 +285,7 @@
             },
             subComment(){
                 axios.post('http://localhost:8090/androidApp/Comment/InsertComment',{
-                    comment:this.comment,
+                    commentDetails:this.comment,
                     postId:this.postId,
                   })
                 .then(()=>{
