@@ -311,13 +311,13 @@
                 .then(()=>{
                     Toast("评论成功！");
                     this.comment='';
+                    this.get_comments();
                     Toast('评论成功后列表长度',this.commentsList.length);
                 })
               }             
             },
             onLoad() {
               setTimeout(() => {
-                this.get_comments();
                   for (let i = 0; i < 1; i++) {
                     this.commentsList.push(this.commentsList.length + 1);
                   }
