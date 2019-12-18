@@ -252,6 +252,7 @@
             this.get_id();
             this.get_post();
             this.get_comments();
+            this.get_icon();
         },
         // updated(){
         //   this.get_comments();
@@ -291,7 +292,9 @@
                     console.log(error);
                     Toast("网络开小差了，请稍后再试！");
                 });
-                axios.post('http://localhost:8090/androidApp/Comment/getIcon',{
+            },
+            get_icon(){
+              axios.post('http://localhost:8090/androidApp/Comment/getIcon',{
                   postId:this.postId,
                 })
                 .then(list=>{
@@ -301,7 +304,7 @@
                 }).catch(err=>{
                   // eslint-disable-next-line no-console
                   console.log("获取头像错误",err);
-                })
+              })
             },
             subComment(){
               if(this.comment==''){

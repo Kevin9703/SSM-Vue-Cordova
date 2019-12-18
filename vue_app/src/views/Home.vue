@@ -118,7 +118,6 @@ export default {
             console.log(response);
             this.postList=response.data;
             // eslint-disable-next-line no-console
-            console.log("goodsList",this.goodsList);
             setTimeout(() => {
               this.refresh_text = "刷新成功！";
 
