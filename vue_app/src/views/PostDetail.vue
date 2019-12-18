@@ -2,7 +2,7 @@
   <div>
     <div
       v-for="item in postList"
-      :key="item.index"
+      :key="item.indexNumber"
     >
       <div
         style="padding-bottom: 50px;"
@@ -312,7 +312,6 @@
                     Toast("评论成功！");
                     this.comment='';
                     this.get_comments();
-                    Toast('评论成功后列表长度',this.commentsList.length);
                 })
               }             
             },
