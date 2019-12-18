@@ -26,6 +26,7 @@
             finished-text="没有更多了"
             :offset="50"
             ref="check"
+            :immediate-check="false"
           >
             <div>
               <van-row type="flex">
