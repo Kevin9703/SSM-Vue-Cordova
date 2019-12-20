@@ -17,7 +17,7 @@
         </div>
       </van-search>
     </div>
-    <div style="margin-top:5px;">
+    <div style="padding-top: 66px;">
       <van-pull-refresh
         v-model="isLoading"
         @refresh="get_allGoods"
@@ -147,9 +147,10 @@ export default {
 
 <style scoped>
   .top{
-    position:sticky;
+    position:fixed;
+    width: 100%;
     top:0px;
-    z-index: 1;
+    z-index: 1; 
     box-shadow:1px 1px 3px #cecece;
   }
   .refresh{

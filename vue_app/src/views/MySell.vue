@@ -8,7 +8,7 @@
         @click-left="onClickLeft"
       />
     </div>
-    <div>
+    <div style="padding-top:46px">
       <van-pull-refresh
         v-model="isLoading"
         @refresh="get_allGoods"
@@ -26,7 +26,6 @@
         <!-- 出售按钮 -->
         <van-button
           type="info"
-          @click="sell"
           to="/Sell"
           :round="true"
           icon="plus"
@@ -111,9 +110,6 @@ export default {
           this.search=false;
         }, 500);
       },
-      sell(){
-        
-      },
     },
 }
 </script>
@@ -121,9 +117,10 @@ export default {
 
 <style scoped>
   .top{
-    position:sticky;
     top:0px;
     z-index: 1;
+    position:fixed;
+    width: 100%;
   }
   .button{
       text-align: center;

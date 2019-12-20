@@ -5,7 +5,7 @@
       :key="item.indexNumber"
     >
       <div
-        style="padding-bottom: 50px;"
+        style="padding-bottom: 50px;padding-top: 46px;"
         v-if="item.postId == postId"
       >
         <div
@@ -228,6 +228,14 @@
                         "postId":1,
                         "icon":require('../assets/default.jpg'),
                         "userId":'babadalal',
+                        "indexNumber":3,
+                        "commentDetails":"帖子1评论2",
+                        "commentTime":"2019-12-17 17:42"
+                    },
+                    {
+                        "postId":1,
+                        "icon":require('../assets/default.jpg'),
+                        "userId":'babadalal',
                         "indexNumber":2,
                         "commentDetails":"帖子1评论2",
                         "commentTime":"2019-12-17 17:42"
@@ -336,7 +344,8 @@
 
 <style scoped>
 .top{
-    position:sticky;
+    position:fixed;
+    width: 100%;
     top:0px;
     z-index: 1;
   }
