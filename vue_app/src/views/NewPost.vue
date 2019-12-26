@@ -112,7 +112,7 @@ export default {
     },
     send() {
       axios
-        .post("url", {
+        .post("http://localhost:8090/androidApp/Comment/InsertPost", {
           title: this.title,
           details: this.message,
           photo: this.photo
