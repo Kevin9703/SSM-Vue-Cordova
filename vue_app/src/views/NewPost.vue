@@ -41,9 +41,8 @@
           <van-button
             type="default"
             @click="deletePhoto"
-          >
-            删除图片
-          </van-button>
+            icon="cross"
+          />
         </div>
       </van-col>
     </van-row>

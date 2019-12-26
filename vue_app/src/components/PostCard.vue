@@ -26,12 +26,15 @@
             <br>
             <span class="show_text">{{ item.details }}</span>
             <br>
-            <van-image
-              width="10rem"
-              height="10rem"
-              fit="contain"
-              :src="item.photo"
-            />
+            <div v-if="item.photo!=null">
+              <van-image
+                width="10rem"
+                height="10rem"
+                fit="contain"
+                :src="item.photo"
+              />
+            </div>
+            
             <br>
             <van-col span="18">
               <span style="color:grey;font-size:12px">{{ item.postTime }}</span>

@@ -63,17 +63,19 @@
                 </li>
               </van-col>
             </van-row>
-      
-            <van-row 
-              type="flex"
-              justify="center"
-            >
-              <van-col span="23">
-                <van-image
-                  :src="item.photo"
-                />
-              </van-col>
-            </van-row>
+            <div v-if="item.photo!=null">
+              <van-row 
+                type="flex"
+                justify="center"
+              >
+                <van-col span="23">
+                  <van-image
+                    :src="item.photo"
+                  />
+                </van-col>
+              </van-row>
+            </div>
+            <br>
           </div>
           <div class="fenge" />
           <van-row
@@ -199,7 +201,7 @@
                     userId:'babadalal',
                     details:'IT之家12月17日消息 今天下午，DxOMark网站正式公布了华为Mate30 Pro 5G版相机得分，其中拍照得分134分，视频拍摄得分102分，总分为123分，超过华为Mate30 Pro、小米CC9 Pro尊享版获得DxOMark手机榜单第一名。',
                     title: 'DxOMark公布华为Mate30 Pro 5G版相机得分，123分夺第一',
-                    photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191217_161518_254.png',
+                    photo: null,
                     icon: require('../assets/default.jpg'),
                     postTime: '2019-12-12 16:30',
                     totalNumber:'1',

@@ -66,7 +66,7 @@ export default {
           count: 0,
           isLoading: false,
           searchList: [],
-          goodsList: [{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null},{"goodId":null,"userId":"null","goodName":"null","number":null,"price":null,"describe":"null","phone1":null,"phone2":null,"phone3":null}],
+          goodsList: [{"goodId":1,"userId":"babadalal","goodName":"好东西","number":1,"price":999,"describe":"好东西","photo1":require('../assets/234.jpg'),"photo2":require('../assets/123.jpg'),"photo3":require('../assets/logo.png')},{"goodId":2,"userId":"babadalal","goodName":"好东西","number":2,"price":9999,"describe":"好东西","photo1":require('../assets/123.jpg'),"photo2":null,"photo3":null}],
         }     
     },
     mounted(){

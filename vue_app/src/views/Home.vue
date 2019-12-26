@@ -34,9 +34,10 @@ import { Image, Toast } from "vant";
 import { PullRefresh } from "vant";
 import { Divider } from "vant";
 import { Icon } from "vant";
+import { Button } from 'vant';
 
 Vue.use(Icon);
-
+Vue.use(Button);
 Vue.use(PullRefresh);
 Vue.use(Divider);
 Vue.use(Image);
@@ -77,7 +78,7 @@ export default {
             "IT之家12月17日消息 今天下午，DxOMark网站正式公布了华为Mate30 Pro 5G版相机得分，其中拍照得分134分，视频拍摄得分102分，总分为123分，超过华为Mate30 Pro、小米CC9 Pro尊享版获得DxOMark手机榜单第一名。",
           title: "DxOMark公布华为Mate30 Pro 5G版相机得分，123分夺第一",
           photo:
-            "https://img.ithome.com/newsuploadfiles/2019/12/20191217_161518_254.png",
+            null,
           icon: require("../assets/default.jpg"),
           postTime: "2019-12-12 16:30",
           totalNumber: "1"
