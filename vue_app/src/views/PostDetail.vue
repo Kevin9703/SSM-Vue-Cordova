@@ -19,13 +19,6 @@
           />
         </div>
         <div>
-          <!-- <van-list
-            v-model="loading"
-            @load="onLoad"
-            :finished="finished"
-            finished-text="没有更多了"
-            :offset="50"
-          > -->
           <div>
             <van-row type="flex">
               <van-col span="3">
@@ -165,7 +158,9 @@
     import { Field,Button } from 'vant';
     import { Toast } from 'vant';
     import { List } from 'vant';
+    import { ImagePreview } from 'vant';
 
+Vue.use(ImagePreview);
     Vue.use(List);
     Vue.use(Field);
     Vue.use(Button);
@@ -258,9 +253,6 @@
             this.get_post();
             this.get_comments();
         },
-        // updated(){
-        //   this.get_comments();
-        // },
         methods: {
             onClickLeft() {
                 this.$router.go(-1);
@@ -324,22 +316,7 @@
                     this.get_comments();
                 })
               }             
-            },
-            // onLoad() {
-            //   setTimeout(() => {
-            //       for (let i = 0; i < 1; i++) {
-            //         this.commentsList.push(this.commentsList.length + 1);
-            //       }
-            //       this.loading = false;
-            //       // Toast('评论成功前列表长度',this.commentsList.length);
-            //     // 数据全部加载完成
-            //     if (this.commentsList.length >= this.totalNumber){
-            //       this.finished = true;
-            //       this.loading = false;
-
-            //     }    
-            //   }, 500);
-            // }     
+            },   
         },
     }
 </script>
