@@ -8,7 +8,7 @@
         :success-duration="1000"
       >
         <div>
-          <PostCard :posts="postList" />
+          <PostCard :posts="pList" />
         </div>
       </van-pull-refresh>
     </div>
@@ -58,6 +58,7 @@ export default {
     return {
       isLoading: false,
       refresh_text: "",
+      pList:[],
       postList: [
         {
           postId: 1,
@@ -101,6 +102,7 @@ export default {
   },
   mounted() {
     this.get_allPosts();
+    this.pList = this.postList.reverse();
   },
   methods: {
     get_allPosts() {
@@ -110,6 +112,7 @@ export default {
           // eslint-disable-next-line no-console
           console.log(response);
           this.postList = response.data;
+          this.pList = this.postList.reverse();
           // eslint-disable-next-line no-console
           setTimeout(() => {
             this.refresh_text = "刷新成功！";
