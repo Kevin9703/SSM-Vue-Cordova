@@ -246,10 +246,12 @@ export default {
     },
     subBuy() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/BuyGoods", [{
-          goodId: this.goodId,
-          number: this.buyNumber
-        }])
+        .post("http://localhost:8090/androidApp/Goods/BuyGoods", [
+          {
+            goodId: this.goodId,
+            number: this.buyNumber
+          }
+        ])
         .then(response => {
           if (response.data == "success") {
             Toast("购买成功");
@@ -269,6 +271,8 @@ export default {
         .then(response => {
           if (response.data == "success") {
             Toast("添加成功");
+          } else if (response.data == "fail") {
+            Toast("数量超过商品总数上限");
           }
         })
         .catch(error => {
