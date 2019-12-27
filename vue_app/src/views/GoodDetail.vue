@@ -267,7 +267,7 @@ export default {
           goodId: this.goodId
         })
         .then(response => {
-          if (response == "success") {
+          if (response.data == "success") {
             Toast("添加成功");
           }
         })
