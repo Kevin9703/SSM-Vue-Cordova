@@ -88,11 +88,11 @@ export default {
       icon: require("../assets/default.jpg"),
       userId: "null",
       userName: "null",
-      phone: "null",
-      qq: "null",
-      password: "null",
-      address: "null",
-      sex: "null"
+      phone: null,
+      qq: null,
+      password: null,
+      address: null,
+      sex: null,
     };
   },
   mounted() {

@@ -55,7 +55,7 @@ export default {
     },
     submit() {
       axios
-        .post("url", {
+        .post("http://localhost:8090/androidApp/User/UpdateIcon", {
           icon: this.photo
         })
         .then(response => {
