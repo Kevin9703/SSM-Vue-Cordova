@@ -12,6 +12,7 @@
     </div>
     <div style="text-align:center;margin-top:50px;">
       <van-uploader
+        :after-read="afterRead"
         v-model="fileList"
         multiple
         :max-count="1"
