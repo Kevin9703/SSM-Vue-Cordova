@@ -5,9 +5,7 @@
         @click="showDetail"
         style="margin-left:20px;"
       >
-        <van-col
-          span="6"
-        >
+        <van-col span="6">
           <van-image
             width="70"
             height="70"
@@ -59,15 +57,15 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { Button } from 'view-design';
-import { Dialog,Toast } from 'vant';
-import { Loading } from 'vant';
-import { Row, Col } from 'vant';
-import { Cell, CellGroup } from 'vant';
-import { Icon } from 'vant';
-import { Image } from 'vant';
-import axios from 'axios';
+import Vue from "vue";
+import { Button } from "view-design";
+import { Dialog, Toast } from "vant";
+import { Loading } from "vant";
+import { Row, Col } from "vant";
+import { Cell, CellGroup } from "vant";
+import { Icon } from "vant";
+import { Image } from "vant";
+import axios from "axios";
 
 Vue.use(Image);
 
@@ -77,60 +75,64 @@ Vue.use(Cell).use(CellGroup);
 
 Vue.use(Row).use(Col);
 
-Vue.component('Button', Button);
+Vue.component("Button", Button);
 Vue.use(Toast);
 Vue.use(Loading);
 
 export default {
-    name: 'UserDetail',
-    data() {
-        return {
-            icon: require('../assets/default.jpg'),
-            userId:'null',
-            userName:'null',
-        }
+  name: "UserDetail",
+  data() {
+    return {
+      icon: require("../assets/default.jpg"),
+      userId: "null",
+      userName: "null"
+    };
+  },
+  mounted() {
+    this.get_info();
+  },
+  methods: {
+    click() {
+      Toast.setDefaultOptions({ duration: 1000 });
+      Dialog.confirm({
+        title: "提示",
+        message: "是否要注销当前登录账户？"
+      })
+        .then(() => {
+          // on confirm
+          Toast("注销成功");
+          localStorage.removeItem("Flag");
+          this.$router.push("/login");
+        })
+        .catch(() => {
+          // on cancel
+          return;
+        });
     },
-    mounted(){
-      this.get_info();
+    showDetail() {
+      this.$router.push({ path: "MyDetail" });
     },
-    methods: {
-        click(){
-          Toast.setDefaultOptions({ duration: 1000 });
-          Dialog.confirm({
-            title: '提示',
-            message: '是否要注销当前登录账户？'
-          }).then(() => {
-            // on confirm
-            Toast('注销成功')
-            localStorage.removeItem("Flag")
-            this.$router.push('/login')
-          }).catch(() => {
-            // on cancel
-            return;
-          });
-        },
-        showDetail(){
-          this.$router.push({ path: 'MyDetail' })
-        },
-        get_info(){
-          axios.get('http://localhost:8090/androidApp/User/GetUserInfo')
-          .then(response=>{
-            // eslint-disable-next-line no-console
-            console.log(response)
-            this.userName=response.data.userName;
-            this.userId=response.data.userId;
-            this.icon=response.data.icon;
-          })
-        }
-    },
-}
+    get_info() {
+      axios
+        .get("http://localhost:8090/androidApp/User/GetUserInfo")
+        .then(response => {
+          // eslint-disable-next-line no-console
+          console.log(response);
+          this.userName = response.data.userName;
+          this.userId = response.data.userId;
+          this.icon = response.data.icon;
+        });
+    }
+  }
+};
 </script>
 
 <style>
-    .name{
-      font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
-      font-weight:500;
-      font-size: 20px;
-      color: black;
-    }
+.name {
+  font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑,
+    STHeiti, MingLiu;
+  font-weight: 500;
+  font-size: 20px;
+  color: black;
+}
 </style>

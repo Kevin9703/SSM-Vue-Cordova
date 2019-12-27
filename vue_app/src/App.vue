@@ -1,14 +1,10 @@
 <template>
-  <div
-    id="app"
-  >
+  <div id="app">
     <div class="container">
       <transition>
         <router-view />
       </transition>
-    
-    
-    
+
       <!-- 不显示底部导航栏 -->
       <div
         v-if="$route.path!=='/login' && $route.path!=='/register'&& $route.name!=='PostDetail'&& $route.name!=='NewPost'&& $route.name!=='GoodDetail'&& $route.name!=='ShoppingCart'"
@@ -39,70 +35,72 @@
           <van-tabbar-item
             name="my"
             icon="user-o"
-            to="/userdetail" 
+            to="/userdetail"
           >
             我的
           </van-tabbar-item>
         </van-tabbar>
-      </div>  
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import '@vant/touch-emulator';
+import "@vant/touch-emulator";
 export default {
-  data(){
-    return{
-      active: 'home',
-    }
+  data() {
+    return {
+      active: "home"
+    };
   },
-  updated (){
+  updated() {
     this.nav();
   },
   methods: {
     nav() {
       // eslint-disable-next-line no-console
       // console.log(this.$route);
-      if(this.$route.name=='home'){
-        this.active='home'
+      if (this.$route.name == "home") {
+        this.active = "home";
       }
-      if(this.$route.name=='AllItem'){
-        this.active='allItem'
+      if (this.$route.name == "AllItem") {
+        this.active = "allItem";
       }
-      if(this.$route.name=='ShoppingCart'){
-        this.active='shoppingCart'
+      if (this.$route.name == "ShoppingCart") {
+        this.active = "shoppingCart";
       }
-      if(this.$route.name=='UserDetail'){
-        this.active='my'
+      if (this.$route.name == "UserDetail") {
+        this.active = "my";
       }
-    },
-  },
-}
+    }
+  }
+};
 </script>
 
 <style>
-html,body,#app{
-    background-color: #ffffff;
-    /* position: fixed; */
-  }
-.container{
+html,
+body,
+#app {
+  background-color: #ffffff;
+  /* position: fixed; */
+}
+.container {
   overflow-x: hidden;
 }
-.nav{
-  height :50px;
+.nav {
+  height: 50px;
 }
-.v-enter{
+.v-enter {
   opacity: 0;
   transform: translateX(100%);
 }
-.v-leave-to{
+.v-leave-to {
   opacity: 0;
   transform: translateX(-100%);
   position: absolute;
 }
 .v-enter-active,
-.v-leave.active{
+.v-leave.active {
   transition: all 0.5s ease;
 }
 </style>

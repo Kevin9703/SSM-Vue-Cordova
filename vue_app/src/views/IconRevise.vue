@@ -2,7 +2,7 @@
   <div>
     <div>
       <van-nav-bar
-        title=""
+        title
         left-arrow
         left-text="上传头像"
         @click-left="onClickLeft"
@@ -24,55 +24,57 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-    import axios from 'axios';
-    import { Uploader } from 'vant';
-    import { NavBar } from 'vant';
-    import { Button } from 'vant';
-    import { Notify } from 'vant';
+import Vue from "vue";
+import axios from "axios";
+import { Uploader } from "vant";
+import { NavBar } from "vant";
+import { Button } from "vant";
+import { Notify } from "vant";
 
-    Vue.use(Notify);
+Vue.use(Notify);
 
-    Vue.use(Button);
-    Vue.use(NavBar);
-    Vue.use(Uploader);
+Vue.use(Button);
+Vue.use(NavBar);
+Vue.use(Uploader);
 
-    export default {
-        name: 'IconRevise',
-        data() {
-            return {
-                fileList: [],
-                photo:'',
-            }
-        },
-        methods: {
-            afterRead(file) {
-                // 此时可以自行将文件上传至服务器
-                this.photo=file.content;
-            },
-            onClickLeft(){
-                window.history.go(-1);
-            },
-            submit(){
-                axios.post('url',{
-                    icon: this.photo,
-                })
-                .then(response=>{
-                    // eslint-disable-next-line no-console
-                    console.log(response);
-                    Notify('上传成功');
-                    window.history.go(-1);
-                }).catch(error=>{
-                    // eslint-disable-next-line no-console
-                    console.log(error);
-                })
-            },
-        },
+export default {
+  name: "IconRevise",
+  data() {
+    return {
+      fileList: [],
+      photo: ""
+    };
+  },
+  methods: {
+    afterRead(file) {
+      // 此时可以自行将文件上传至服务器
+      this.photo = file.content;
+    },
+    onClickLeft() {
+      window.history.go(-1);
+    },
+    submit() {
+      axios
+        .post("url", {
+          icon: this.photo
+        })
+        .then(response => {
+          // eslint-disable-next-line no-console
+          console.log(response);
+          Notify("上传成功");
+          window.history.go(-1);
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.log(error);
+        });
     }
+  }
+};
 </script>
 
 <style scoped>
-    .font{
-        color: #778899;
-    }
+.font {
+  color: #778899;
+}
 </style>

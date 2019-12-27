@@ -23,7 +23,9 @@
               {{ item.userId }}
               <van-row>
                 <van-col span="21">
-                  <li style="font-size:10px;list-style: none;">
+                  <li
+                    style="font-size:10px;list-style: none;"
+                  >
                     第{{ item.indexNumber }}楼 {{ item.commentTime }}
                   </li>
                 </van-col>
@@ -41,35 +43,32 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-    import { Divider } from 'vant';
-    import { Image } from 'vant';
-    import { Row, Col } from 'vant';
+import Vue from "vue";
+import { Divider } from "vant";
+import { Image } from "vant";
+import { Row, Col } from "vant";
 
-    Vue.use(Image);
-    Vue.use(Row).use(Col);
-    Vue.use(Divider);
+Vue.use(Image);
+Vue.use(Row).use(Col);
+Vue.use(Divider);
 
-    export default {
-        name: 'CommentList',
-        data() {
-            return {
-                
-            }
-        },
-         props: {
-          comments:{
-            type: Array,
-            default: null,
-          },
-        },
+export default {
+  name: "CommentList",
+  data() {
+    return {};
+  },
+  props: {
+    comments: {
+      type: Array,
+      default: null
     }
+  }
+};
 </script>
 
 <style scoped>
-.comment{
-    font-size:17px;
-    color:black;
+.comment {
+  font-size: 17px;
+  color: black;
 }
-    
 </style>

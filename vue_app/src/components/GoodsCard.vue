@@ -15,7 +15,7 @@
             fit="contain"
           />
           <br>
-          <span class="name">{{ item.goodName }}</span>      
+          <span class="name">{{ item.goodName }}</span>
           <br>
           <van-col span="12">
             <span class="price">¥ {{ item.price }}</span>
@@ -32,10 +32,10 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { Row, Col } from 'vant';
-import { Card } from 'vant';
-import { Image } from 'vant';
+import Vue from "vue";
+import { Row, Col } from "vant";
+import { Card } from "vant";
+import { Image } from "vant";
 
 Vue.use(Image);
 
@@ -43,34 +43,33 @@ Vue.use(Card);
 
 Vue.use(Row).use(Col);
 
-    export default {
-        name: 'GoodsCard',
-        data() {
-            return {
-                photo:require('../assets/123.jpg'),
-            }
-        },
-        props: {
-          goods:{
-            type: Array,
-            default: null,
-          },
-        },
+export default {
+  name: "GoodsCard",
+  data() {
+    return {
+      photo: require("../assets/123.jpg")
+    };
+  },
+  props: {
+    goods: {
+      type: Array,
+      default: null
     }
+  }
+};
 </script>
 
 <style scoped>
-.name{
-  font-size:15px;
+.name {
+  font-size: 15px;
   color: black;
 }
-.price{
-  color:orange;
-  font-size:16px;
+.price {
+  color: orange;
+  font-size: 16px;
 }
-.number{
-  font-size:10px;
-  color:gray;
+.number {
+  font-size: 10px;
+  color: gray;
 }
-    
 </style>

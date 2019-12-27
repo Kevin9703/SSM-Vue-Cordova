@@ -17,9 +17,7 @@
       >
         <div>
           <!-- 所有商品列表 -->
-          <SellCard
-            :goods="goodsList"
-          />
+          <SellCard :goods="goodsList" />
         </div>
       </van-pull-refresh>
       <div class="button">
@@ -31,21 +29,21 @@
           icon="plus"
         />
       </div>
-    </div> 
+    </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import SellCard from '../components/SellCard'
-import axios from 'axios';
-import '@vant/touch-emulator';
+import Vue from "vue";
+import SellCard from "../components/SellCard";
+import axios from "axios";
+import "@vant/touch-emulator";
 
-import { Search, Toast } from 'vant';
-import { Button } from 'vant';
-import { PullRefresh } from 'vant';
-import { Row, Col } from 'vant';
-import { NavBar } from 'vant';
+import { Search, Toast } from "vant";
+import { Button } from "vant";
+import { PullRefresh } from "vant";
+import { Row, Col } from "vant";
+import { NavBar } from "vant";
 
 Vue.use(NavBar);
 
@@ -55,78 +53,125 @@ Vue.use(Button);
 Vue.use(Search);
 
 export default {
-    name:'MySell',
-    components: {
-        SellCard: SellCard,
-    },
-    data() {
-        return {
-          refresh_text:'',
-          search: false,
-          value: '',
-          count: 0,
-          isLoading: false,
-          searchList: [],
-          goodsList: [{"goodId":1,"userId":"abbadalal","goodName":"test","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')},{"goodId":2,"userId":"abbadalal","goodName":"test2","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')},{"goodId":3,"userId":"abbadalal","goodName":"test3","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')},{"goodId":4,"userId":"abbadalal","goodName":"test4","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')},{"goodId":5,"userId":"abbadalal","goodName":"test5","number":1,"price":999,"describe":"null","photo1":require('../assets/123.jpg')}],
-        }     
-    },
-    mounted(){
-      this.get_allGoods();
-    },
-    methods: {
-        onClickLeft() {
-            this.$router.go(-1);
+  name: "MySell",
+  components: {
+    SellCard: SellCard
+  },
+  data() {
+    return {
+      refresh_text: "",
+      search: false,
+      value: "",
+      count: 0,
+      isLoading: false,
+      searchList: [],
+      goodsList: [
+        {
+          goodId: 1,
+          userId: "abbadalal",
+          goodName: "test",
+          number: 1,
+          price: 999,
+          describe: "null",
+          photo1: require("../assets/123.jpg")
         },
-      get_allGoods(){
-        axios.get('http://localhost:8090/androidApp/Goods/FindMyGoods')
-        .then(response=>{
+        {
+          goodId: 2,
+          userId: "abbadalal",
+          goodName: "test2",
+          number: 1,
+          price: 999,
+          describe: "null",
+          photo1: require("../assets/123.jpg")
+        },
+        {
+          goodId: 3,
+          userId: "abbadalal",
+          goodName: "test3",
+          number: 1,
+          price: 999,
+          describe: "null",
+          photo1: require("../assets/123.jpg")
+        },
+        {
+          goodId: 4,
+          userId: "abbadalal",
+          goodName: "test4",
+          number: 1,
+          price: 999,
+          describe: "null",
+          photo1: require("../assets/123.jpg")
+        },
+        {
+          goodId: 5,
+          userId: "abbadalal",
+          goodName: "test5",
+          number: 1,
+          price: 999,
+          describe: "null",
+          photo1: require("../assets/123.jpg")
+        }
+      ]
+    };
+  },
+  mounted() {
+    this.get_allGoods();
+  },
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+    get_allGoods() {
+      axios
+        .get("http://localhost:8090/androidApp/Goods/FindMyGoods")
+        .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);
-          this.goodsList=response.data;
+          this.goodsList = response.data;
           // eslint-disable-next-line no-console
-          console.log("goodsList",this.goodsList);
+          console.log("goodsList", this.goodsList);
           setTimeout(() => {
             this.refresh_text = "刷新成功！";
-            this.value='';
+            this.value = "";
             this.isLoading = false;
             this.search = false;
           }, 500);
         })
-        .catch(error=>{
+        .catch(error => {
           // eslint-disable-next-line no-console
           console.log(error);
           setTimeout(() => {
-            Toast("网络开小差了，请稍后再试！")
-            this.refresh_text="刷新失败！";
+            Toast("网络开小差了，请稍后再试！");
+            this.refresh_text = "刷新失败！";
             this.isLoading = false;
-            this.search=false;
+            this.search = false;
           }, 500);
-        })
-      },
-      onRefresh() {
-        setTimeout(() => {
-          this.$toast('刷新成功');
-          this.isLoading = false;
-          this.search=false;
-        }, 500);
-      },
+        });
     },
-}
+    onRefresh() {
+      setTimeout(() => {
+        this.$toast("刷新成功");
+        this.isLoading = false;
+        this.search = false;
+      }, 500);
+    }
+  }
+};
 </script>
 
 
 <style scoped>
-  .top{
-    top:0px;
-    z-index: 1;
-    position:fixed;
-    width: 100%;
-  }
-  .button{
-      text-align: center;
-      position:fixed;
-      z-index: 1;
-      bottom:60px;
-      right: 10px;
-  }
+.top {
+  top: 0px;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+}
+.button {
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  bottom: 60px;
+  right: 10px;
+}
 </style>

@@ -255,7 +255,7 @@ export default {
         .then(response => {
           if (response.data == "success") {
             Toast("购买成功");
-            this.$router.push("/AllItem")
+            this.$router.push("/AllItem");
           }
         })
         .catch(error => {

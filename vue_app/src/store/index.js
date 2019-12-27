@@ -16,10 +16,11 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    userLogin({commit}, flag) {
+    userLogin({
+      commit
+    }, flag) {
       commit("userStatus", flag)
     },
   },
-  modules: {
-  }
+  modules: {}
 })

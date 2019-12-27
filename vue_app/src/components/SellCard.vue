@@ -30,36 +30,32 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { Row, Col } from 'vant';
-import { Card } from 'vant';
-import { Button } from 'vant';
-
+import Vue from "vue";
+import { Row, Col } from "vant";
+import { Card } from "vant";
+import { Button } from "vant";
 
 Vue.use(Card);
 Vue.use(Button);
 Vue.use(Row).use(Col);
 
-
-    export default {
-        name: 'SellCard',
-        data() {
-            return {
-                goodId:'',
-                photo:require('../assets/123.jpg'),
-            }
-        },
-        props: {
-          goods:{
-            type: Array,
-            default: null,
-          },
-        },
-        methods: {
-        },
+export default {
+  name: "SellCard",
+  data() {
+    return {
+      goodId: "",
+      photo: require("../assets/123.jpg")
+    };
+  },
+  props: {
+    goods: {
+      type: Array,
+      default: null
     }
+  },
+  methods: {}
+};
 </script>
 
 <style lang="" scoped>
-    
 </style>

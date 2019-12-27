@@ -8,9 +8,7 @@
         style="padding-bottom: 50px;padding-top: 46px;"
         v-if="item.postId == postId"
       >
-        <div
-          class="top"
-        >
+        <div class="top">
           <van-nav-bar
             title="主题帖"
             left-arrow
@@ -34,13 +32,13 @@
               <van-col
                 span="10"
                 style="margin-top:5px;"
-              > 
+              >
                 <li style="color:black;font-size:13px;list-style: none;">
                   {{ item.userId }}
-                </li> 
+                </li>
                 <li style="color:grey;font-size:12px;list-style: none;">
                   {{ item.postTime }}
-                </li>       
+                </li>
               </van-col>
             </van-row>
             <van-row
@@ -50,21 +48,19 @@
               <van-col span="23">
                 <li class="title">
                   {{ item.title }}
-                </li>      
+                </li>
                 <li class="details">
                   {{ item.details }}
                 </li>
               </van-col>
             </van-row>
             <div v-if="item.photo!=null">
-              <van-row 
+              <van-row
                 type="flex"
                 justify="center"
               >
                 <van-col span="23">
-                  <van-image
-                    :src="item.photo"
-                  />
+                  <van-image :src="item.photo" />
                 </van-col>
               </van-row>
             </div>
@@ -105,7 +101,9 @@
                       {{ items.userId }}
                       <van-row>
                         <van-col span="21">
-                          <li style="font-size:10px;list-style: none;">
+                          <li
+                            style="font-size:10px;list-style: none;"
+                          >
                             第{{ items.indexNumber }}楼 {{ items.commentTime }}
                           </li>
                         </van-col>
@@ -122,7 +120,7 @@
           </div>
           <!-- </van-list> -->
         </div>
-      
+
         <div class="bottom">
           <van-field
             v-model="comment"
@@ -149,206 +147,221 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-    import axios from 'axios'
-    import { Image } from 'vant';
-    import { NavBar } from 'vant';
-    import { Row, Col } from 'vant';
-    import { Divider } from 'vant';
-    import { Field,Button } from 'vant';
-    import { Toast } from 'vant';
-    import { List } from 'vant';
-    import { ImagePreview } from 'vant';
+import Vue from "vue";
+import axios from "axios";
+import { Image } from "vant";
+import { NavBar } from "vant";
+import { Row, Col } from "vant";
+import { Divider } from "vant";
+import { Field, Button } from "vant";
+import { Toast } from "vant";
+import { List } from "vant";
+import { ImagePreview } from "vant";
 
 Vue.use(ImagePreview);
-    Vue.use(List);
-    Vue.use(Field);
-    Vue.use(Button);
-    Vue.use(Divider);
-    Vue.use(Row).use(Col);
-    Vue.use(NavBar);
-    Vue.use(Image);
+Vue.use(List);
+Vue.use(Field);
+Vue.use(Button);
+Vue.use(Divider);
+Vue.use(Row).use(Col);
+Vue.use(NavBar);
+Vue.use(Image);
 
-    export default {
-        name: 'PostDetail',
-        components: {
-        // CommentList: CommentList,
+export default {
+  name: "PostDetail",
+  components: {
+    // CommentList: CommentList,
+  },
+  data() {
+    return {
+      finished: false,
+      loading: false,
+      totalNumber: 3,
+      postId: "",
+      iconList: [{ no: "iocn" }],
+      postList: [
+        {
+          postId: 1,
+          userId: "babadalal",
+          details:
+            "IT之家12月16日消息 在12月初的夏威夷骁龙技术峰会上，高通正式发布了新一代旗舰移动平台骁龙865。",
+          title: "性能猛增！高通骁龙865原型机及基准跑分全公布",
+          photo:
+            "https://img.ithome.com/newsuploadfiles/2019/12/20191216_220341_424.jpg",
+          icon: require("../assets/default.jpg"),
+          postTime: "2019-12-12 16:30",
+          totalNumber: "2"
+        },
+        {
+          postId: 2,
+          userId: "babadalal",
+          details:
+            "IT之家12月17日消息 今天下午，DxOMark网站正式公布了华为Mate30 Pro 5G版相机得分，其中拍照得分134分，视频拍摄得分102分，总分为123分，超过华为Mate30 Pro、小米CC9 Pro尊享版获得DxOMark手机榜单第一名。",
+          title: "DxOMark公布华为Mate30 Pro 5G版相机得分，123分夺第一",
+          photo: null,
+          icon: require("../assets/default.jpg"),
+          postTime: "2019-12-12 16:30",
+          totalNumber: "1"
+        },
+        {
+          postId: 3,
+          userId: "babadalal",
+          details:
+            "IT之家12月17日消息 上周，腾讯视频、爱奇艺两大视频网站平台均在会员制基础上，推出了超前点播付费模式。会员用户可花费50元购买加速权益包，始终超前看6集《庆余年》。",
+          title:
+            "买会员还要再花钱，腾讯视频王娟回应《庆余年》争议：对会员的消费心理不够体贴",
+          photo:
+            "https://img.ithome.com/newsuploadfiles/2019/12/20191217_120735_266.png",
+          icon: require("../assets/default.jpg"),
+          postTime: "2019-12-12 16:30",
+          totalNumber: "1"
+        }
+      ],
+      comment: "",
+      commentsList: [
+        {
+          postId: 1,
+          icon: require("../assets/default.jpg"),
+          userId: "babadalal",
+          indexNumber: 1,
+          commentDetails: "帖子1评论1",
+          commentTime: "2019-12-17 17:42"
+        },
+        {
+          postId: 1,
+          icon: require("../assets/default.jpg"),
+          userId: "babadalal",
+          indexNumber: 3,
+          commentDetails: "帖子1评论2",
+          commentTime: "2019-12-17 17:42"
+        },
+        {
+          postId: 1,
+          icon: require("../assets/default.jpg"),
+          userId: "babadalal",
+          indexNumber: 2,
+          commentDetails: "帖子1评论2",
+          commentTime: "2019-12-17 17:42"
+        },
+        {
+          postId: 2,
+          icon: require("../assets/default.jpg"),
+          userId: "babadalal",
+          indexNumber: 1,
+          commentDetails: "帖子2评论1",
+          commentTime: "2019-12-17 17:42"
+        }
+      ]
+    };
+  },
+  mounted() {
+    this.get_id();
+    this.get_post();
+    this.get_comments();
+  },
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
     },
-        data() {
-            return {
-                finished: false,
-                loading: false,
-                totalNumber:3,
-                postId:'',
-                iconList:[{no:'iocn'}],
-                postList:[{
-                    postId:1,
-                    userId:'babadalal',
-                    details:'IT之家12月16日消息 在12月初的夏威夷骁龙技术峰会上，高通正式发布了新一代旗舰移动平台骁龙865。',
-                    title: '性能猛增！高通骁龙865原型机及基准跑分全公布',
-                    photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191216_220341_424.jpg',
-                    icon: require('../assets/default.jpg'),
-                    postTime: '2019-12-12 16:30',
-                    totalNumber:'2',
-                  },
-                  {
-                    postId:2,
-                    userId:'babadalal',
-                    details:'IT之家12月17日消息 今天下午，DxOMark网站正式公布了华为Mate30 Pro 5G版相机得分，其中拍照得分134分，视频拍摄得分102分，总分为123分，超过华为Mate30 Pro、小米CC9 Pro尊享版获得DxOMark手机榜单第一名。',
-                    title: 'DxOMark公布华为Mate30 Pro 5G版相机得分，123分夺第一',
-                    photo: null,
-                    icon: require('../assets/default.jpg'),
-                    postTime: '2019-12-12 16:30',
-                    totalNumber:'1',
-                  },
-                  {
-                    postId:3,
-                    userId:'babadalal',
-                    details:'IT之家12月17日消息 上周，腾讯视频、爱奇艺两大视频网站平台均在会员制基础上，推出了超前点播付费模式。会员用户可花费50元购买加速权益包，始终超前看6集《庆余年》。',
-                    title: '买会员还要再花钱，腾讯视频王娟回应《庆余年》争议：对会员的消费心理不够体贴',
-                    photo: 'https://img.ithome.com/newsuploadfiles/2019/12/20191217_120735_266.png',
-                    icon: require('../assets/default.jpg'),
-                    postTime: '2019-12-12 16:30',
-                    totalNumber:'1',
-                  },],
-                comment:'',
-                commentsList:[
-                    {
-                        "postId":1,
-                        "icon":require('../assets/default.jpg'),
-                        "userId":'babadalal',
-                        "indexNumber":1,
-                        "commentDetails":"帖子1评论1",
-                        "commentTime":"2019-12-17 17:42"
-                    },
-                    {
-                        "postId":1,
-                        "icon":require('../assets/default.jpg'),
-                        "userId":'babadalal',
-                        "indexNumber":3,
-                        "commentDetails":"帖子1评论2",
-                        "commentTime":"2019-12-17 17:42"
-                    },
-                    {
-                        "postId":1,
-                        "icon":require('../assets/default.jpg'),
-                        "userId":'babadalal',
-                        "indexNumber":2,
-                        "commentDetails":"帖子1评论2",
-                        "commentTime":"2019-12-17 17:42"
-                    },
-                    {
-                        "postId":2,
-                        "icon":require('../assets/default.jpg'),
-                        "userId":'babadalal',
-                        "indexNumber":1,
-                        "commentDetails":"帖子2评论1",
-                        "commentTime":"2019-12-17 17:42"
-                    },
-                ],
-            }
-        },
-        mounted(){
-            this.get_id();
-            this.get_post();
+    get_id() {
+      this.postId = this.$route.params.postId;
+      // eslint-disable-next-line no-console
+      console.log(this.postId);
+    },
+    get_post() {
+      axios
+        .get("http://localhost:8090/androidApp/Comment/FindAllForums")
+        .then(response => {
+          // eslint-disable-next-line no-console
+          console.log(response);
+          this.postList = response.data;
+          this.totalNumber = response.data.totalNumber;
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.log(error);
+          Toast("网络开小差了，请稍后再试！");
+        });
+    },
+    get_comments() {
+      axios
+        .post("http://localhost:8090/androidApp/Comment/FindAllComments", {
+          postId: this.postId
+        })
+        .then(response => {
+          // eslint-disable-next-line no-console
+          console.log("获得评论：", response);
+          this.commentsList = response.data;
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.log(error);
+          Toast("网络开小差了，请稍后再试！");
+        });
+    },
+    get_icon() {
+      axios
+        .post("http://localhost:8090/androidApp/Comment/getIcon", {
+          postId: this.postId
+        })
+        .then(list => {
+          // eslint-disable-next-line no-console
+          console.log("获得头像：", list);
+          this.iconList = list.data;
+        })
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.log("获取头像错误", err);
+        });
+    },
+    subComment() {
+      if (this.comment == "") {
+        Toast("评论不能为空！");
+      } else {
+        axios
+          .post("http://localhost:8090/androidApp/Comment/InsertComment", {
+            commentDetails: this.comment,
+            postId: this.postId
+          })
+          .then(() => {
+            Toast("评论成功！");
+            this.comment = "";
             this.get_comments();
-        },
-        methods: {
-            onClickLeft() {
-                this.$router.go(-1);
-            },
-            get_id(){        
-              this.postId = this.$route.params.postId;
-              // eslint-disable-next-line no-console
-              console.log(this.postId)
-            },
-            get_post(){
-                axios.get('http://localhost:8090/androidApp/Comment/FindAllForums')
-                .then(response=>{
-                    // eslint-disable-next-line no-console
-                    console.log(response);
-                    this.postList=response.data;
-                    this.totalNumber=response.data.totalNumber;
-                }).catch(error=>{
-                    // eslint-disable-next-line no-console
-                    console.log(error);
-                    Toast("网络开小差了，请稍后再试！");
-                })
-            },
-            get_comments(){
-                axios.post('http://localhost:8090/androidApp/Comment/FindAllComments',{
-                  postId:this.postId,
-                })
-                .then(response=>{
-                    // eslint-disable-next-line no-console
-                    console.log("获得评论：",response);
-                    this.commentsList=response.data;
-                }).catch(error=>{
-                    // eslint-disable-next-line no-console
-                    console.log(error);
-                    Toast("网络开小差了，请稍后再试！");
-                });
-            },
-            get_icon(){
-              axios.post('http://localhost:8090/androidApp/Comment/getIcon',{
-                  postId:this.postId,
-                })
-                .then(list=>{
-                    // eslint-disable-next-line no-console
-                    console.log("获得头像：",list);
-                      this.iconList=list.data;
-                }).catch(err=>{
-                  // eslint-disable-next-line no-console
-                  console.log("获取头像错误",err);
-              })
-            },
-            subComment(){
-              if(this.comment==''){
-                Toast("评论不能为空！")
-              }else{
-                axios.post('http://localhost:8090/androidApp/Comment/InsertComment',{
-                    commentDetails:this.comment,
-                    postId:this.postId,
-                  })
-                .then(()=>{
-                    Toast("评论成功！");
-                    this.comment='';
-                    this.get_comments();
-                })
-              }             
-            },   
-        },
+          });
+      }
     }
+  }
+};
 </script>
 
 <style scoped>
-.top{
-    position:fixed;
-    width: 100%;
-    top:0px;
-    z-index: 1;
-  }
-.title{
-    color:#363636;
-    font-size:20px;
-    list-style: none;
-    margin-top:13px;
-    font-weight:bolder;
+.top {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
 }
-.details{
-    list-style: none;
-    color:black;
+.title {
+  color: #363636;
+  font-size: 20px;
+  list-style: none;
+  margin-top: 13px;
+  font-weight: bolder;
 }
-.fenge{
-    width: 100%;
-    height: 15px;
-    background-color: #d1d1d1;
+.details {
+  list-style: none;
+  color: black;
 }
-.bottom{
-    position:fixed;
-    bottom: 0px;
-    z-index: 1;
-    width: 100%;
-    box-shadow:1px 1px 4px #cecece;
-  }
+.fenge {
+  width: 100%;
+  height: 15px;
+  background-color: #d1d1d1;
+}
+.bottom {
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+  box-shadow: 1px 1px 4px #cecece;
+}
 </style>

@@ -10,30 +10,29 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { PullRefresh } from 'vant';
+import Vue from "vue";
+import { PullRefresh } from "vant";
 
 Vue.use(PullRefresh);
-    export default {
-        name: 'Test',
-        data() {
-            return {
-                count: 0,
-                isLoading: false
-            }
-        },
-        methods: {
-            onRefresh() {
-                setTimeout(() => {
-                    this.$toast('刷新成功');
-                    this.isLoading = false;
-                    this.count++;
-                }, 500);
-            },
-        },
+export default {
+  name: "Test",
+  data() {
+    return {
+      count: 0,
+      isLoading: false
+    };
+  },
+  methods: {
+    onRefresh() {
+      setTimeout(() => {
+        this.$toast("刷新成功");
+        this.isLoading = false;
+        this.count++;
+      }, 500);
     }
+  }
+};
 </script>
 
 <style lang="" scoped>
-    
 </style>

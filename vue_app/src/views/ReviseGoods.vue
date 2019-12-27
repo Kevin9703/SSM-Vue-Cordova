@@ -30,9 +30,7 @@
           @focus="priceError=false"
           clearable
         />
-        <van-cell
-          title="数量"
-        >
+        <van-cell title="数量">
           <van-stepper
             v-model="number"
             integer
@@ -76,15 +74,15 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import axios from 'axios'
-import { NavBar,Toast,Dialog,Icon } from 'vant';
-import { Field } from 'vant';
-import { Loading,Button } from 'vant';
-import { Stepper } from 'vant';
-import { Cell, CellGroup } from 'vant';
-import { Uploader } from 'vant';
-import { Notify } from 'vant';
+import Vue from "vue";
+import axios from "axios";
+import { NavBar, Toast, Dialog, Icon } from "vant";
+import { Field } from "vant";
+import { Loading, Button } from "vant";
+import { Stepper } from "vant";
+import { Cell, CellGroup } from "vant";
+import { Uploader } from "vant";
+import { Notify } from "vant";
 
 Vue.use(Notify);
 
@@ -97,107 +95,111 @@ Vue.use(Toast);
 Vue.use(Dialog);
 Vue.use(NavBar);
 Vue.use(Icon);
-Vue.use(Button)
+Vue.use(Button);
 
 export default {
-    name: 'Register',
-    data() {
-        return {
-            buttonDisabled: true,
-            goodNameError: false,
-            priceError: false,
-            goodName:'',
-            number:'1',
-            price:'',
-            describe:'',
-            photo1:'',
-            photo2:'',
-            photo3:'',
-            good_id:'',
-        }
+  name: "Register",
+  data() {
+    return {
+      buttonDisabled: true,
+      goodNameError: false,
+      priceError: false,
+      goodName: "",
+      number: "1",
+      price: "",
+      describe: "",
+      photo1: "",
+      photo2: "",
+      photo3: "",
+      good_id: ""
+    };
+  },
+  mounted() {
+    this.get_Goods();
+    this.get_id();
+  },
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
     },
-    mounted () {
-        this.get_Goods();
-        this.get_id();
+    onClickRight() {
+      Toast("发布");
     },
-    methods: {
-        onClickLeft() {
-            this.$router.go(-1);
-        },
-        onClickRight(){
-          Toast('发布');
-        }, 
-        deleteGood(){
-            Dialog.confirm({
-                title: '提示',
-                message: '确认删除此商品？'
-            }).then(() => {
-                // on confirm
-                    axios.post('http://localhost:8090/androidApp/Goods/DeleteGoods',{
-                        goodId : this.$route.params.goodId,
-                    });
-                    Notify({ type: 'danger', message: '删除成功' });
-                    window.history.go(-1);
-                }).catch(() => {
-                    // on cancel
-                    return;
-                });
-        },
-        submitInfo(){
-            //用post向后台提交商品信息
-            axios.post('http://localhost:8090/androidApp/Goods/UpdateGoods',{
-              goodId: this.good_id,
-              goodName: this.goodName,
-              price: this.price,
-              number: this.number,
-              describe: this.describe,
-            })
-            .then(response=>{
-              // eslint-disable-next-line no-console
-              console.log('response :', response);
-                Toast.success('商品修改成功！');
-                // eslint-disable-next-line no-console
-                window.history.go(-1);
-            })
-            .catch(error=>{
-              // eslint-disable-next-line no-console
-              console.log('error :', error);
-              Dialog.alert({
-                  title: '提示',
-                  message: '数据请求失败，请重试！'
-                  }).then(() => {
-                    // on close
-                  });
-            })
-        },
-        get_Goods(){
-            axios.post('http://localhost:8090/androidApp/Goods/FindGoodsById',{
-                goodId:this.$route.params.goodId
-            })
-            .then(response=>{
-                // eslint-disable-next-line no-console
-                console.log(response);
-                this.goodName=response.data.goodName;
-                this.number=response.data.number;
-                this.price=response.data.price;
-                this.describe=response.data.describe;
-            })
-            .catch(error=>{
-            // eslint-disable-next-line no-console
-            console.log(error);
-            })
-        },
-        get_id(){
-          this.good_id = this.$route.params.goodId;
-        }
+    deleteGood() {
+      Dialog.confirm({
+        title: "提示",
+        message: "确认删除此商品？"
+      })
+        .then(() => {
+          // on confirm
+          axios.post("http://localhost:8090/androidApp/Goods/DeleteGoods", {
+            goodId: this.$route.params.goodId
+          });
+          Notify({ type: "danger", message: "删除成功" });
+          window.history.go(-1);
+        })
+        .catch(() => {
+          // on cancel
+          return;
+        });
     },
-}
+    submitInfo() {
+      //用post向后台提交商品信息
+      axios
+        .post("http://localhost:8090/androidApp/Goods/UpdateGoods", {
+          goodId: this.good_id,
+          goodName: this.goodName,
+          price: this.price,
+          number: this.number,
+          describe: this.describe
+        })
+        .then(response => {
+          // eslint-disable-next-line no-console
+          console.log("response :", response);
+          Toast.success("商品修改成功！");
+          // eslint-disable-next-line no-console
+          window.history.go(-1);
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.log("error :", error);
+          Dialog.alert({
+            title: "提示",
+            message: "数据请求失败，请重试！"
+          }).then(() => {
+            // on close
+          });
+        });
+    },
+    get_Goods() {
+      axios
+        .post("http://localhost:8090/androidApp/Goods/FindGoodsById", {
+          goodId: this.$route.params.goodId
+        })
+        .then(response => {
+          // eslint-disable-next-line no-console
+          console.log(response);
+          this.goodName = response.data.goodName;
+          this.number = response.data.number;
+          this.price = response.data.price;
+          this.describe = response.data.describe;
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.log(error);
+        });
+    },
+    get_id() {
+      this.good_id = this.$route.params.goodId;
+    }
+  }
+};
 </script>
 
 <style coped>
-  .top{
-    position:sticky;
-    top:0px;
-    z-index: 1;
-  }
+.top {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
 </style>
