@@ -136,6 +136,7 @@ export default {
         .then(response => {
           if (response.data == "success") {
             Toast("购买成功！");
+            this.$router.go(-1);
           }
         })
         .catch(error => {
