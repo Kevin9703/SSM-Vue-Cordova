@@ -2,7 +2,6 @@
   <div style="text-align:center;">
     <br>
     <h1>用户登录</h1>
-    <h1>这里可以放个logo</h1>
     <div>
       <Input
         prefix="ios-contact-outline"
@@ -37,9 +36,6 @@
           注册账户
         </router-link>
         <br>
-        <span>{{ userId }}</span>
-        <br>
-        <span>{{ userPassword }}</span>
       </div>
     </div>
   </div>
