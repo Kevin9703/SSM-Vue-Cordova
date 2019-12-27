@@ -26,7 +26,7 @@
       <Button
         type="primary"
         size="large"
-        @click="login_test"
+        @click="login_check"
         style="width: 90%;margin-top:30px;"
       >
         登录
