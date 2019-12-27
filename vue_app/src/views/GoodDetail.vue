@@ -212,9 +212,9 @@ export default {
     },
     get_info() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/FindGoodsById", [{
+        .post("http://localhost:8090/androidApp/Goods/FindGoodsById", {
           goodId: this.goodId
-        }])
+        })
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);
@@ -246,10 +246,10 @@ export default {
     },
     subBuy() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/BuyGoods", {
+        .post("http://localhost:8090/androidApp/Goods/BuyGoods", [{
           goodId: this.goodId,
           number: this.buyNumber
-        })
+        }])
         .then(response => {
           if (response == "success") {
             Toast("购买成功");
