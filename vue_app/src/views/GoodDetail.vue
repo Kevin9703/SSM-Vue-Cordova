@@ -212,9 +212,9 @@ export default {
     },
     get_info() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/FindGoodsById", {
+        .post("http://localhost:8090/androidApp/Goods/FindGoodsById", [{
           goodId: this.goodId
-        })
+        }])
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);
