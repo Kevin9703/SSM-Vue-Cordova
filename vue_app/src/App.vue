@@ -11,7 +11,7 @@
     
       <!-- 不显示底部导航栏 -->
       <div
-        v-if="$route.path!=='/login' && $route.path!=='/register'&& $route.name!=='PostDetail'&& $route.name!=='NewPost'&& $route.name!=='GoodDetail'"
+        v-if="$route.path!=='/login' && $route.path!=='/register'&& $route.name!=='PostDetail'&& $route.name!=='NewPost'&& $route.name!=='GoodDetail'&& $route.name!=='ShoppingCart'"
         class="nav"
       >
         <van-tabbar v-model="active">

@@ -33,7 +33,7 @@
           <van-cell
             title="我买到的东西"
             is-link
-            to="/"
+            to="/MyBuy"
             icon="shopping-cart-o"
           />
           <van-cell

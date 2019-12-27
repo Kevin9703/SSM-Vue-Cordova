@@ -253,11 +253,10 @@ export default {
         .then(response => {
           if (response == "success") {
             Toast("购买成功");
-          } else {
-            Toast("服务器开小差了，请稍后再试");
           }
         })
         .catch(error => {
+          Toast("服务器开小差了，请稍后再试");
           // eslint-disable-next-line no-console
           console.log(error);
         });
@@ -270,11 +269,10 @@ export default {
         .then(response => {
           if (response == "success") {
             Toast("添加成功");
-          } else {
-            Toast("服务器开小差了，请稍后再试");
           }
         })
         .catch(error => {
+          Toast("服务器开小差了，请稍后再试");
           // eslint-disable-next-line no-console
           console.log(error);
         });

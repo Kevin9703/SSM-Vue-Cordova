@@ -128,6 +128,14 @@ const routes = [
     },
     component: () => import('../views/NewPost.vue')
   },
+    {
+    path: '/MyBuy',
+    name: 'MyBuy',
+    meta: {
+      isLogin: true
+    },
+    component: () => import('../views/MyBuy.vue')
+  },
 ]
 
 const router = new VueRouter({
