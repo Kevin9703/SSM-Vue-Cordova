@@ -84,7 +84,7 @@ export default {
         });
       } else {
         axios
-          .post("http://localhost:8090/androidApp/User/Login", {
+          .post("http://192.168.137.1:8090/androidApp/User/Login", {
             userId: this.userId,
             password: this.userPassword
           })

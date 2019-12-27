@@ -116,7 +116,7 @@ export default {
     },
     get_allGoods() {
       axios
-        .get("http://localhost:8090/androidApp/Goods/FindMyPurchasedGoods")
+        .get("http://192.168.137.1:8090/androidApp/Goods/FindMyPurchasedGoods")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);

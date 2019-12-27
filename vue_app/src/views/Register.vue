@@ -157,7 +157,7 @@ export default {
     submitInfo() {
       //用post向后台提交注册信息  ======未完成：注册输入框判断======
       axios
-        .post("http://localhost:8090/androidApp/User/Register", {
+        .post("http://192.168.137.1:8090/androidApp/User/Register", {
           userId: this.userId,
           password: this.password,
           userName: this.name,

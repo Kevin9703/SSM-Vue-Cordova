@@ -149,7 +149,7 @@ export default {
     submitInfo() {
       //用post向后台提交商品信息
       axios
-        .post("http://localhost:8090/androidApp/Goods/AddGoods", {
+        .post("http://192.168.137.1:8090/androidApp/Goods/AddGoods", {
           goodName: this.goodName,
           price: this.price,
           number: this.number,

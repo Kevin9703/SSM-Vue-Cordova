@@ -270,7 +270,7 @@ export default {
     },
     get_post() {
       axios
-        .get("http://localhost:8090/androidApp/Comment/FindAllForums")
+        .get("http://192.168.137.1:8090/androidApp/Comment/FindAllForums")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);
@@ -285,7 +285,7 @@ export default {
     },
     get_comments() {
       axios
-        .post("http://localhost:8090/androidApp/Comment/FindAllComments", {
+        .post("http://192.168.137.1:8090/androidApp/Comment/FindAllComments", {
           postId: this.postId
         })
         .then(response => {
@@ -301,7 +301,7 @@ export default {
     },
     get_icon() {
       axios
-        .post("http://localhost:8090/androidApp/Comment/getIcon", {
+        .post("http://192.168.137.1:8090/androidApp/Comment/getIcon", {
           postId: this.postId
         })
         .then(list => {
@@ -319,7 +319,7 @@ export default {
         Toast("评论不能为空！");
       } else {
         axios
-          .post("http://localhost:8090/androidApp/Comment/InsertComment", {
+          .post("http://192.168.137.1:8090/androidApp/Comment/InsertComment", {
             commentDetails: this.comment,
             postId: this.postId
           })

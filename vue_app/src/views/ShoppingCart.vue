@@ -116,7 +116,7 @@ export default {
 
   methods: {
     formatPrice(price) {
-      return (price / 100).toFixed(2);
+      return (price).toFixed(2);
     },
     onClickLeft() {
       this.$router.go(-1);
@@ -132,7 +132,7 @@ export default {
       // eslint-disable-next-line no-console
       console.log(this.buy);
       axios
-        .post("http://localhost:8090/androidApp/Goods/BuyGoods", this.buy)
+        .post("http://192.168.137.1:8090/androidApp/Goods/BuyGoods", this.buy)
         .then(response => {
           if (response.data == "success") {
             Toast("购买成功！");
@@ -147,7 +147,7 @@ export default {
     },
     get_info() {
       axios
-        .get("http://localhost:8090/androidApp/Goods/FindShoppingCart")
+        .get("http://192.168.137.1:8090/androidApp/Goods/FindShoppingCart")
         .then(response => {
           this.goods = response.data;
         })

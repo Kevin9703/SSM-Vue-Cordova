@@ -94,7 +94,7 @@ export default {
   methods: {
     get_allGoods() {
       axios
-        .get("http://localhost:8090/androidApp/Goods/FindAllGoods")
+        .get("http://192.168.137.1:8090/androidApp/Goods/FindAllGoods")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);
@@ -128,7 +128,7 @@ export default {
     },
     onSearch() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/FindGoodsByName", {
+        .post("http://192.168.137.1:8090/androidApp/Goods/FindGoodsByName", {
           goodName: this.value
         })
         .then(response => {

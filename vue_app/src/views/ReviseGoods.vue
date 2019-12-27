@@ -132,7 +132,7 @@ export default {
       })
         .then(() => {
           // on confirm
-          axios.post("http://localhost:8090/androidApp/Goods/DeleteGoods", {
+          axios.post("http://192.168.137.1:8090/androidApp/Goods/DeleteGoods", {
             goodId: this.$route.params.goodId
           });
           Notify({ type: "danger", message: "删除成功" });
@@ -146,7 +146,7 @@ export default {
     submitInfo() {
       //用post向后台提交商品信息
       axios
-        .post("http://localhost:8090/androidApp/Goods/UpdateGoods", {
+        .post("http://192.168.137.1:8090/androidApp/Goods/UpdateGoods", {
           goodId: this.good_id,
           goodName: this.goodName,
           price: this.price,
@@ -173,7 +173,7 @@ export default {
     },
     get_Goods() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/FindGoodsById", {
+        .post("http://192.168.137.1:8090/androidApp/Goods/FindGoodsById", {
           goodId: this.$route.params.goodId
         })
         .then(response => {

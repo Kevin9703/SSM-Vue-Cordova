@@ -212,7 +212,7 @@ export default {
     },
     get_info() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/FindGoodsById", {
+        .post("http://192.168.137.1:8090/androidApp/Goods/FindGoodsById", {
           goodId: this.goodId
         })
         .then(response => {
@@ -246,7 +246,7 @@ export default {
     },
     subBuy() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/BuyGoods", [
+        .post("http://192.168.137.1:8090/androidApp/Goods/BuyGoods", [
           {
             goodId: this.goodId,
             number: this.buyNumber
@@ -266,7 +266,7 @@ export default {
     },
     addCart() {
       axios
-        .post("http://localhost:8090/androidApp/Goods/InsertShoppingCart", {
+        .post("http://192.168.137.1:8090/androidApp/Goods/InsertShoppingCart", {
           goodId: this.goodId
         })
         .then(response => {

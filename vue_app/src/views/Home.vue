@@ -69,7 +69,7 @@ export default {
   methods: {
     get_allPosts() {
       axios
-        .get("http://localhost:8090/androidApp/Comment/FindAllForums")
+        .get("http://192.168.137.1:8090/androidApp/Comment/FindAllForums")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);

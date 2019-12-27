@@ -114,7 +114,7 @@ export default {
     },
     get_info() {
       axios
-        .get("http://localhost:8090/androidApp/User/GetUserInfo")
+        .get("http://192.168.137.1:8090/androidApp/User/GetUserInfo")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);

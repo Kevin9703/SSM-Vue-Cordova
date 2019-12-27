@@ -56,7 +56,7 @@ export default {
     },
     submit() {
       axios
-        .post("http://localhost:8090/androidApp/User/UpdateIcon", {
+        .post("http://192.168.137.1:8090/androidApp/User/UpdateIcon", {
           icon: this.photo
         })
         .then(response => {
