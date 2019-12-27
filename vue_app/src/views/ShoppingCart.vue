@@ -110,6 +110,9 @@ export default {
       );
     }
   },
+  mounted() {
+    this.get_info();
+  },
 
   methods: {
     formatPrice(price) {
@@ -127,7 +130,7 @@ export default {
         };
       });
       // eslint-disable-next-line no-console
-      console.log(this.buy)
+      console.log(this.buy);
       axios
         .post("http://localhost:8090/androidApp/Goods/BuyGoods", this.buy)
         .then(response => {
