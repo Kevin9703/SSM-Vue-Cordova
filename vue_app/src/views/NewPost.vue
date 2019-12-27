@@ -66,7 +66,6 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import { Row, Col } from "vant";
 import { Icon } from "vant";
 import { NavBar } from "vant";
@@ -110,8 +109,8 @@ export default {
       window.history.go(-1);
     },
     send() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Comment/InsertPost", {
+      this.axios
+        .post("/Comment/InsertPost", {
           title: this.title,
           details: this.message,
           photo: this.photo

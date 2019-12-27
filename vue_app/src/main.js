@@ -6,6 +6,11 @@ import 'vant/lib/index.css';
 import 'view-design/dist/styles/iview.css';
 import '@vant/touch-emulator';
 
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://192.168.137.1:8090/androidApp'
+Vue.prototype.axios = axios
+
 Vue.config.productionTip = false
 new Vue({
   router,

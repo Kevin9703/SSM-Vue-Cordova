@@ -75,7 +75,6 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import { NavBar, Toast, Dialog, Icon } from "vant";
 import { Field } from "vant";
 import { Loading, Button } from "vant";
@@ -132,7 +131,7 @@ export default {
       })
         .then(() => {
           // on confirm
-          axios.post("http://192.168.137.1:8090/androidApp/Goods/DeleteGoods", {
+          this.axios.post("/Goods/DeleteGoods", {
             goodId: this.$route.params.goodId
           });
           Notify({ type: "danger", message: "删除成功" });
@@ -145,8 +144,8 @@ export default {
     },
     submitInfo() {
       //用post向后台提交商品信息
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Goods/UpdateGoods", {
+      this.axios
+        .post("/Goods/UpdateGoods", {
           goodId: this.good_id,
           goodName: this.goodName,
           price: this.price,
@@ -172,8 +171,8 @@ export default {
         });
     },
     get_Goods() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Goods/FindGoodsById", {
+      this.axios
+        .post("/Goods/FindGoodsById", {
           goodId: this.$route.params.goodId
         })
         .then(response => {

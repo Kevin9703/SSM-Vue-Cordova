@@ -25,7 +25,6 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import PostCard from "../components/PostCard";
 import { Tabbar, TabbarItem } from "vant";
 import { Row, Col } from "vant";
@@ -68,8 +67,8 @@ export default {
   },
   methods: {
     get_allPosts() {
-      axios
-        .get("http://192.168.137.1:8090/androidApp/Comment/FindAllForums")
+      this.axios
+        .get("/Comment/FindAllForums")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);

@@ -148,7 +148,6 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import { Image } from "vant";
 import { NavBar } from "vant";
 import { Row, Col } from "vant";
@@ -269,8 +268,8 @@ export default {
       console.log(this.postId);
     },
     get_post() {
-      axios
-        .get("http://192.168.137.1:8090/androidApp/Comment/FindAllForums")
+      this.axios
+        .get("/Comment/FindAllForums")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);
@@ -284,8 +283,8 @@ export default {
         });
     },
     get_comments() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Comment/FindAllComments", {
+      this.axios
+        .post("/Comment/FindAllComments", {
           postId: this.postId
         })
         .then(response => {
@@ -300,8 +299,8 @@ export default {
         });
     },
     get_icon() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Comment/getIcon", {
+      this.axios
+        .post("/Comment/getIcon", {
           postId: this.postId
         })
         .then(list => {
@@ -318,8 +317,8 @@ export default {
       if (this.comment == "") {
         Toast("评论不能为空！");
       } else {
-        axios
-          .post("http://192.168.137.1:8090/androidApp/Comment/InsertComment", {
+        this.axios
+          .post("/Comment/InsertComment", {
             commentDetails: this.comment,
             postId: this.postId
           })

@@ -152,7 +152,6 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import { NavBar } from "vant";
 import { Image } from "vant";
 import { Swipe, SwipeItem } from "vant";
@@ -211,8 +210,8 @@ export default {
       this.goodId = this.$route.params.goodId;
     },
     get_info() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Goods/FindGoodsById", {
+      this.axios
+        .post("/Goods/FindGoodsById", {
           goodId: this.goodId
         })
         .then(response => {
@@ -245,8 +244,8 @@ export default {
       this.show = true;
     },
     subBuy() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Goods/BuyGoods", [
+      this.axios
+        .post("/Goods/BuyGoods", [
           {
             goodId: this.goodId,
             number: this.buyNumber
@@ -265,8 +264,8 @@ export default {
         });
     },
     addCart() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Goods/InsertShoppingCart", {
+      this.axios
+        .post("/Goods/InsertShoppingCart", {
           goodId: this.goodId
         })
         .then(response => {

@@ -44,7 +44,6 @@
 <script>
 import Vue from "vue";
 import { Checkbox, CheckboxGroup, Card, SubmitBar, Toast } from "vant";
-import axios from "axios";
 import { NavBar } from "vant";
 
 Vue.use(NavBar);
@@ -107,7 +106,7 @@ export default {
           (this.checkedGoods.indexOf(item.goodId) !== -1 ? item.price : 0) *
             item.number,
         0
-      );
+      )*100;
     }
   },
   mounted() {
@@ -131,8 +130,8 @@ export default {
       });
       // eslint-disable-next-line no-console
       console.log(this.buy);
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Goods/BuyGoods", this.buy)
+      this.axios
+        .post("/Goods/BuyGoods", this.buy)
         .then(response => {
           if (response.data == "success") {
             Toast("购买成功！");
@@ -146,8 +145,8 @@ export default {
         });
     },
     get_info() {
-      axios
-        .get("http://192.168.137.1:8090/androidApp/Goods/FindShoppingCart")
+      this.axios
+        .get("/Goods/FindShoppingCart")
         .then(response => {
           this.goods = response.data;
         })
