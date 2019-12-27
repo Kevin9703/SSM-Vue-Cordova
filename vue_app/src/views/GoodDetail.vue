@@ -251,7 +251,7 @@ export default {
           number: this.buyNumber
         }])
         .then(response => {
-          if (response == "success") {
+          if (response.data == "success") {
             Toast("购买成功");
           }
         })
