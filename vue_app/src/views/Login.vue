@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import { Input, Button } from "view-design";
 import Vue from "vue";
 import { Toast } from "vant";
@@ -59,7 +58,7 @@ export default {
   data() {
     return {
       userId: "",
-      userPassword: "" // 双向绑定数据，输入后post到后台进行登陆验证(axios)
+      userPassword: "" // 双向绑定数据，输入后post到后台进行登陆验证(this.axios)
     };
   },
   methods: {
@@ -83,8 +82,8 @@ export default {
           // on close
         });
       } else {
-        axios
-          .post("http://192.168.137.1:8090/androidApp/User/Login", {
+        this.axios
+          .post("/User/Login", {
             userId: this.userId,
             password: this.userPassword
           })

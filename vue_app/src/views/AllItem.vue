@@ -38,7 +38,6 @@
 <script>
 import Vue from "vue";
 import GoodsCard from "../components/GoodsCard";
-import axios from "axios";
 import "@vant/touch-emulator";
 
 import { Search, Toast } from "vant";
@@ -93,8 +92,8 @@ export default {
   },
   methods: {
     get_allGoods() {
-      axios
-        .get("http://192.168.137.1:8090/androidApp/Goods/FindAllGoods")
+      this.axios
+        .get("/Goods/FindAllGoods")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);
@@ -127,8 +126,8 @@ export default {
       }, 500);
     },
     onSearch() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Goods/FindGoodsByName", {
+      this.axios
+        .post("/Goods/FindGoodsByName", {
           goodName: this.value
         })
         .then(response => {

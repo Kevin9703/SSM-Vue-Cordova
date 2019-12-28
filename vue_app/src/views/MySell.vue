@@ -36,7 +36,6 @@
 <script>
 import Vue from "vue";
 import SellCard from "../components/SellCard";
-import axios from "axios";
 import "@vant/touch-emulator";
 
 import { Search, Toast } from "vant";
@@ -122,8 +121,8 @@ export default {
       this.$router.go(-1);
     },
     get_allGoods() {
-      axios
-        .get("http://192.168.137.1:8090/androidApp/Goods/FindMyGoods")
+      this.axios
+        .get("/Goods/FindMyGoods")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);

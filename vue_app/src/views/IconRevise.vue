@@ -26,7 +26,6 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import { Uploader } from "vant";
 import { NavBar } from "vant";
 import { Button } from "vant";
@@ -55,8 +54,8 @@ export default {
       window.history.go(-1);
     },
     submit() {
-      axios
-        .post("http://192.168.137.1:8090/androidApp/User/UpdateIcon", {
+      this.axios
+        .post("/User/UpdateIcon", {
           icon: this.photo
         })
         .then(response => {

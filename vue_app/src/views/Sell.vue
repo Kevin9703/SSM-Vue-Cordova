@@ -88,7 +88,6 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import { NavBar, Toast, Dialog, Icon } from "vant";
 import { Field } from "vant";
 import { Button } from "view-design";
@@ -148,8 +147,8 @@ export default {
     },
     submitInfo() {
       //用post向后台提交商品信息
-      axios
-        .post("http://192.168.137.1:8090/androidApp/Goods/AddGoods", {
+      this.axios
+        .post("/Goods/AddGoods", {
           goodName: this.goodName,
           price: this.price,
           number: this.number,

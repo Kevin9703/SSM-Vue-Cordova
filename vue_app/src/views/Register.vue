@@ -102,7 +102,6 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import { Field, NavBar, Toast, Dialog, Icon } from "vant";
 import { Button } from "view-design";
 import { Loading } from "vant";
@@ -156,8 +155,8 @@ export default {
     },
     submitInfo() {
       //用post向后台提交注册信息  ======未完成：注册输入框判断======
-      axios
-        .post("http://192.168.137.1:8090/androidApp/User/Register", {
+      this.axios
+        .post("/User/Register", {
           userId: this.userId,
           password: this.password,
           userName: this.name,

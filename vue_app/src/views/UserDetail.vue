@@ -65,7 +65,6 @@ import { Row, Col } from "vant";
 import { Cell, CellGroup } from "vant";
 import { Icon } from "vant";
 import { Image } from "vant";
-import axios from "axios";
 
 Vue.use(Image);
 
@@ -113,8 +112,8 @@ export default {
       this.$router.push({ path: "MyDetail" });
     },
     get_info() {
-      axios
-        .get("http://192.168.137.1:8090/androidApp/User/GetUserInfo")
+      this.axios
+        .get("/User/GetUserInfo")
         .then(response => {
           // eslint-disable-next-line no-console
           console.log(response);
