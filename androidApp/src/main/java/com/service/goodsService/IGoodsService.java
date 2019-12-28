@@ -1,6 +1,10 @@
 package com.service.goodsService;
 
 import com.domain.Goods;
+import com.domain.PurchasedGoods;
+import com.domain.Temp;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -32,4 +36,19 @@ public interface IGoodsService {
     List<Goods> findMyGoods();
 
     int deleteGoods(int goodId);
+
+    //新增我购买的商品
+    int insertPurchasedGoods(PurchasedGoods purchasedGoods);
+
+    //查看我购买的商品
+    List<PurchasedGoods> findMyPurchasedGoods();
+
+    //购买商品
+    String buyGoods(List<Temp> list);
+
+    //加入购物车
+    int insertShoppingCart(int goodId);
+
+    //显示购物车商品
+    List<Goods> findShoppingCart();
 }

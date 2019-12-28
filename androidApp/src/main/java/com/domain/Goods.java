@@ -1,6 +1,8 @@
 package com.domain;
 
-public class Goods {
+import java.io.Serializable;
+
+public class Goods implements Serializable {
     private int goodId;
     private String userId;
     private String goodName;

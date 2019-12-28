@@ -35,8 +35,31 @@ public class CommentController {
     @CrossOrigin
     @RequestMapping(value = "/FindAllComments",method = RequestMethod.POST)
     @ResponseBody
-    List<Comment> findAllComments(@RequestBody HashMap<String,Integer>map){
+    public List<Comment> findAllComments(@RequestBody HashMap<String,Integer>map){
         int postId = map.get("postId");
         return commentService.findAllComments(postId);
     }
+
+    //新增评论
+    @CrossOrigin
+    @RequestMapping(value = "/InsertComment",method = RequestMethod.POST)
+    @ResponseBody
+    public String insertComment(@RequestBody Comment comment){
+        if(commentService.insertComment(comment)==1){
+            return "success";
+        }else
+            return "fail";
+    }
+
+    //发帖
+    @CrossOrigin
+    @RequestMapping(value = "/InsertPost",method = RequestMethod.POST)
+    @ResponseBody
+    public String insertPost(@RequestBody Forum forum){
+        if(commentService.insertPost(forum)==1){
+            return "success";
+        }else
+            return "fail";
+    }
+
 }

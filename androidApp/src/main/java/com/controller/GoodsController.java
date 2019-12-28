@@ -1,10 +1,14 @@
 package com.controller;
 
 import com.domain.Goods;
+import com.domain.PurchasedGoods;
+import com.domain.Temp;
 import com.domain.UserNow;
 import com.service.goodsService.IGoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -106,5 +110,41 @@ public class GoodsController {
     public Goods findGoodsById(@RequestBody HashMap<String,String> map) {
         int goodId = Integer.parseInt(map.get("goodId"));
         return goodsService.findGoodsById(goodId);
+    }
+
+    //买商品
+    @CrossOrigin
+    @RequestMapping(value = "/BuyGoods",method = RequestMethod.POST)
+    @ResponseBody
+    public String BuyGoods(@RequestBody List<Temp> list) {
+        return goodsService.buyGoods(list);
+    }
+
+    //查看我购买的商品
+    @CrossOrigin
+    @RequestMapping(value = "/FindMyPurchasedGoods",method = RequestMethod.GET)
+    @ResponseBody
+    public List<PurchasedGoods> findMyPurchasedGoods() {
+        return goodsService.findMyPurchasedGoods();
+    }
+
+    //加入购物车
+    @CrossOrigin
+    @RequestMapping(value = "/InsertShoppingCart",method = RequestMethod.POST)
+    @ResponseBody
+    public String insertShoppingCart(@RequestBody HashMap<String,String> map) {
+        int goodId = Integer.parseInt(map.get("goodId"));
+        if (goodsService.insertShoppingCart(goodId)==1){
+            return "success";
+        }else
+            return "fail";
+    }
+
+    //显示购物车
+    @CrossOrigin
+    @RequestMapping(value = "/FindShoppingCart",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Goods> findShoppingCart() {
+        return goodsService.findShoppingCart();
     }
 }

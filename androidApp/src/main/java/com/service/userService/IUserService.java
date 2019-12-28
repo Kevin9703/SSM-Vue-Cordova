@@ -27,5 +27,7 @@ public interface IUserService {
      */
     User findUserById(String userId);
 
+    //改头像
+    int updateIcon(String icon);
 
 }

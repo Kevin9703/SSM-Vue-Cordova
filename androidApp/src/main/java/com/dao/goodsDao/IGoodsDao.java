@@ -1,6 +1,7 @@
 package com.dao.goodsDao;
 
 import com.domain.Goods;
+import com.domain.PurchasedGoods;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -47,4 +48,34 @@ public interface IGoodsDao {
     @Select("select * from salesList where userId = #{userId}")
     List<Goods> findMyGoods(String userId);
 
+
+    //新增我购买的商品
+    @Insert("insert into purchasedGoods(goodId,myId,userId,goodName,number,price,photo1) " +
+            "values(#{goodId},#{myId},#{userId},#{goodName},#{number},#{price},#{photo1})")
+    int insertPurchasedGoods(PurchasedGoods purchasedGoods);
+
+    //查看我购买的商品
+    @Select("select * from purchasedGoods where myId = #{myId}")
+    List<PurchasedGoods> findMyPurchasedGoods(String myId);
+
+    //加入购物车
+    @Insert("insert into shoppingCart(userId,goodId,number) values(#{userId},#{goodId},#{number})")
+    int insertShoppingCart(@Param("userId") String userId,@Param("goodId") int goodId,@Param("number")int number);
+
+    //显示购物车商品
+    @Select("select salesList.* from salesList,shoppingCart" +
+            " where shoppingCart.userId =#{userId} and shoppingCart.goodId = salesList.goodId")
+    List<Goods> findShoppingCart(String userId);
+
+    //通过id获取购物车中商品数量
+    @Select("select number from shoppingCart where goodId = #{goodId}")
+    int findShoppingCartNumberById(int goodId);
+
+    //通过id获取购物车中商品数量
+    @Select("select * from shoppingCart where goodId = #{goodId}")
+    Object findShoppingCartById(int goodId);
+
+    //更新
+    @Update("update shoppingCart set number = #{number} where goodId = #{goodId} and userId = #{userId}")
+    int updateShoppingCart(@Param("number")int number,@Param("goodId")int goodId,@Param("userId")String userId);
 }

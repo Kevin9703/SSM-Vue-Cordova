@@ -2,6 +2,7 @@ package com.service.userService.Impl;
 
 import com.dao.userDao.IUserDao;
 import com.domain.User;
+import com.domain.UserNow;
 import com.service.userService.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,10 +34,15 @@ public class UserServiceImpl implements IUserService {
      */
     @Override
     public int userRegister(User user) {
-        if (findUserById(user.getUserId())==null){//找不到
+        if (userLoginDao.findUserById(user.getUserId())==null){//找不到
             userLoginDao.userRegister(user);
             return 1;
         }else
             return 0;
+    }
+
+    @Override
+    public int updateIcon(String icon) {
+        return userLoginDao.updateIcon(icon, UserNow.getUserIdNow());
     }
 }

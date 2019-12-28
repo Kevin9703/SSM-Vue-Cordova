@@ -1,10 +1,15 @@
 package com.domain;
 
-public class Comment {
+import java.io.Serializable;
+import java.util.Date;
+
+public class Comment implements Serializable,Comparable<Comment>{
     private int postId;
     private String userId;
     private String commentDetails;
     private String indexNumber;
+    private String commentTime;
+    private String icon;
 
     public int getPostId() {
         return postId;
@@ -38,6 +43,22 @@ public class Comment {
         this.indexNumber = indexNumber;
     }
 
+    public String getCommentTime() {
+        return commentTime;
+    }
+
+    public void setCommentTime(String commentTime) {
+        this.commentTime = commentTime;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
@@ -46,5 +67,17 @@ public class Comment {
                 ", commentDetails='" + commentDetails + '\'' +
                 ", indexNumber='" + indexNumber + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Comment o) {
+        int index1 = Integer.parseInt(o.getIndexNumber());
+        int index2 = Integer.parseInt(this.getIndexNumber());
+        if (index2>index1){
+            return 1;
+        }else if (index1==index2){
+            return 0;
+        }else
+            return -1;
     }
 }

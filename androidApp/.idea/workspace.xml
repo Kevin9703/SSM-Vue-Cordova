@@ -7,95 +7,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55f76edd-1e3a-4ec7-9c9f-f5000a1e8dbd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/commentDao/ICommentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/Forum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/ForumAndIcon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/UserNow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/commentService/ICommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/commentService/Impl/ICommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/PurchasedGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/Temp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/commentService/Impl/CommentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/GoodsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/commentDao/ICommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/commentDao/ICommentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/goodsDao/IGoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/goodsDao/IGoodsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/userDao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/userDao/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/Forum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/Forum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/ForumAndIcon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/ForumAndIcon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/UserNow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/UserNow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/commentService/ICommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/commentService/ICommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/commentService/Impl/ICommentServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/service/goodsService/IGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/goodsService/IGoodsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/service/goodsService/Impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/goodsService/Impl/GoodsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/service/userService/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/userService/IUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/service/userService/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/userService/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/CommentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/GoodsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/commentDao/ICommentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/commentDao/ICommentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/goodsDao/IGoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/goodsDao/IGoodsDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/userDao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/dao/userDao/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/Forum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/Forum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/ForumAndIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/ForumAndIcon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/Goods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/UserNow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/domain/UserNow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/commentService/ICommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/commentService/ICommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/commentService/Impl/ICommentServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/goodsService/IGoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/goodsService/IGoodsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/goodsService/Impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/goodsService/Impl/GoodsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/userService/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/userService/IUserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/userService/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/WEB-INF/classes/com/service/userService/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/androidApp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/androidApp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/CommentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/GoodsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dao/commentDao/ICommentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/commentDao/ICommentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dao/goodsDao/IGoodsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/goodsDao/IGoodsDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dao/userDao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/userDao/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/Forum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/Forum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/ForumAndIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/ForumAndIcon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/domain/Goods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/Goods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/domain/UserNow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/domain/UserNow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/commentService/ICommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/commentService/ICommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/commentService/Impl/ICommentServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/service/goodsService/IGoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/goodsService/IGoodsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/service/goodsService/Impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/goodsService/Impl/GoodsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/service/userService/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/userService/IUserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/service/userService/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/userService/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue_app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/package-lock.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/css/app.c2dd0c84.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/about.b9f15043.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/about.b9f15043.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/app.feefbff2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/app.feefbff2.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0c7e52.f6cad0a5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0c7e52.f6cad0a5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0c94ec.f2c73535.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0c94ec.f2c73535.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0e9050.dd17685e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d0e9050.dd17685e.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d22d74b.841ab135.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-2d22d74b.841ab135.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-53288079.55823e30.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-53288079.55823e30.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-vendors.2f29a83f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/platforms/android/app/src/main/assets/www/js/chunk-vendors.2f29a83f.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/css/app.c2dd0c84.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cordova/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/about.b9f15043.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/about.b9f15043.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/app.feefbff2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/app.feefbff2.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0c7e52.f6cad0a5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0c7e52.f6cad0a5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0c94ec.f2c73535.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0c94ec.f2c73535.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0e9050.dd17685e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d0e9050.dd17685e.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d22d74b.841ab135.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-2d22d74b.841ab135.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-53288079.55823e30.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-53288079.55823e30.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-vendors.2f29a83f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cordova/www/js/chunk-vendors.2f29a83f.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/AllItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/AllItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/MyDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/MyDetail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/MySell.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/MySell.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/ReviseGoods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/ReviseGoods.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/Sell.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/Sell.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue_app/src/views/UserDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue_app/src/views/UserDetail.vue" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +104,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32528734" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -153,6 +122,18 @@
       <recent name="D:\IntelliJ IDEA 2019.2\androidApp\src\main\webapp\WEB-INF" />
       <recent name="D:\IntelliJ IDEA 2019.2\androidApp\src\main\resources" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.221">
     <configuration name="testSpring.testMybatisSaveAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -250,18 +231,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -278,12 +247,17 @@
       <workItem from="1576316320277" duration="3040000" />
       <workItem from="1576329013714" duration="445000" />
       <workItem from="1576331911798" duration="8150000" />
-
       <workItem from="1576392265683" duration="17342000" />
       <workItem from="1576476025459" duration="5630000" />
       <workItem from="1576548290574" duration="5309000" />
       <workItem from="1576493223724" duration="27000" />
-
+      <workItem from="1576655802723" duration="219000" />
+      <workItem from="1576664118882" duration="3510000" />
+      <workItem from="1576677567139" duration="9149000" />
+      <workItem from="1577267226702" duration="274000" />
+      <workItem from="1577331321693" duration="9286000" />
+      <workItem from="1577423022569" duration="13290000" />
+      <workItem from="1577510261665" duration="900000" />
     </task>
     <servers />
   </component>
@@ -303,15 +277,13 @@
       </map>
     </option>
   </component>
-
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
-
+  </component>
   <component name="WindowStateProjectService">
     <state x="368" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1576493229188">
       <screen x="0" y="40" width="1368" height="872" />
     </state>
     <state x="368" y="300" key="com.intellij.ide.util.TipDialog/0.40.1368.872/2736.504.1920.1040@0.40.1368.872" timestamp="1576493229188" />
-
   </component>
 </project>

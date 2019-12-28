@@ -1,6 +1,8 @@
 package com.domain;
 
-public class Forum {
+import java.io.Serializable;
+
+public class Forum implements Serializable {
     private int postId;
     private String userId;
     private String title;

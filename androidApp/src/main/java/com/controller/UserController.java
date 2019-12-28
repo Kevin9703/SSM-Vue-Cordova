@@ -79,17 +79,15 @@ public class UserController {
         return accountService.findUserById(UserNow.getUserIdNow());
     }
 
-
-    /**
-     *自动封装中 string转date
-     * @param request
-     * @param binder
-     */
-    @InitBinder
-    protected void init(HttpServletRequest request, ServletRequestDataBinder binder) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        dateFormat.setLenient(false);
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+    @CrossOrigin
+    @RequestMapping(value = "/UpdateIcon",method = RequestMethod.POST)
+    @ResponseBody
+    public String updateIcon(@RequestBody HashMap<String,String> map){
+        if (accountService.updateIcon(map.get("icon"))==1){
+            return "success";
+        }else
+            return "fail";
     }
+
 
 }
